@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="avis.css">
+    <title>Avis - YUKI </title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="logo-img" src="Image/Sleek_logo_design_for__Yuki__restaurant-removebg-preview.png" alt="Yuki">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-cb">
+            <label for="nav-toggle" class="nav-burger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></label>
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="menu.html">Menu</a>
+                <a href="avis.html">Avis</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="index.html#reservation">Réservation</a>
+            </div>
+        </nav>
+        
+        <div class="hero-texte">
+            <h1>Vos avis</h1>
+            <p>L'art japonais dans chaque assiette</p>
+        </div>
+    </header>
+    <section id="avis-page">
+
+        <div id="moyenne-container">
+            <h2>Note moyenne</h2>
+            <div id="moyenne-etoiles"></div>
+            <p id="moyenne-texte"></p>
+        </div>
+
+        <form id="form-avis">
+            <h2>Laisser un avis</h2>
+            <input type="text" id="nom-avis" placeholder="Votre prénom">
+            <textarea id="texte-avis" placeholder="Votre avis..." rows="4"></textarea>
+            <div class="etoiles-custom">
+                <span class="etoile" data-valeur="1">★</span>
+                <span class="etoile" data-valeur="2">★</span>
+                <span class="etoile" data-valeur="3">★</span>
+                <span class="etoile" data-valeur="4">★</span>
+                <span class="etoile" data-valeur="5">★</span>
+            </div>
+            <input type="hidden" id="note-avis" value="5">
+            <button type="submit">Envoyer</button>
+        </form>
+
+        <div id="liste-avis"></div>
+
+    </section>
+
+    <footer>
+        <p>© 2025 Restaurant YUKI — Tous droits réservés</p>
+        <p style="margin-top:14px;font-size:.8rem;opacity:.75;">Site réalisé par <a href="https://studio-nvxl.web.app" style="color:inherit;">Studio NVXL</a></p>
+  </footer>
+
+    <script type="module" src="avis.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+/* ===== MENU.HTML ===== */
+
+.menu-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)),
+                      url('Image/felix-ngo--s9MPEdgzjQ-unsplash.jpg');
+    background-position: center 40%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-hero h1 {
+    font-size: var(--text-3xl);
+    margin-bottom: 10px;
+    color: white;
+}
+
+.menu-hero p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.menu-page {
+    padding: 40px;
+}
+
+.filtres {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.filtre {
+    background: transparent;
+    color: #2c2c2c;
+    border: 1px solid #2c2c2c;
+    padding: 8px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.filtre.actif, .filtre:hover {
+    background-color: #c0392b;
+    color: white;
+    border-color: #c0392b;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+    .menu-hero {
+        height: 480px;
+        background-attachment: scroll;
+    }
+
+    .menu-page {
+        padding: 24px;
+    }
+
+    .filtres {
+        padding: 24px 8px;
+        gap: 8px;
+    }
+
+    .filtre {
+        padding: 7px 16px;
+        font-size: 12px;
+    }
+}

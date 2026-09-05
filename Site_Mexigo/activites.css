@@ -1,0 +1,233 @@
+/* ============================================================
+   MexiGo — Activités CSS (cohérent avec Accueil & Gastronomie)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@400;600;700;800&display=swap');
+
+:root {
+  --rouge:    #e63946;
+  --vert:     #2d6a4f;
+  --vert-vif: #52b788;
+  --or:       #f4a261;
+  --noir:     #0d0d0d;
+  --creme:    #fdf6ec;
+  --gris:     #f0ebe3;
+  --texte:    #1a1a1a;
+  --blanc:    #ffffff;
+  --font-titre: 'Bebas Neue', cursive;
+  --font-cond:  'Barlow Condensed', sans-serif;
+  --font-body:  'Barlow', sans-serif;
+  --ombre: 0 8px 40px rgba(0,0,0,0.18);
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background-color: var(--creme); color: var(--texte); padding-top: 72px; overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a   { text-decoration: none; }
+ul  { list-style: none; }
+
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* HEADER */
+header.entete {
+  display: flex; align-items: center; justify-content: space-between;
+  background-color: var(--noir); padding: 0 32px; height: 72px;
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  transition: transform 0.4s ease, box-shadow 0.3s;
+  border-bottom: 3px solid var(--rouge);
+}
+header.entete.hidden { transform: translateY(-100%); }
+header.entete.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+header.entete img { height: 46px; width: auto; }
+nav.navigation { display: flex; gap: 8px; align-items: center; position: static; transform: none; width: auto; }
+nav.navigation li { display: inline-block; }
+nav.navigation a { font-family: var(--font-cond); font-weight: 700; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: var(--blanc); padding: 8px 16px; border: 2px solid transparent; border-radius: 2px; transition: var(--transition); }
+nav.navigation a:hover, nav.navigation a.active { color: var(--or); border-color: var(--or); }
+
+/* HERO */
+section.page-haut {
+  position: relative; height: 100vh; min-height: 600px;
+  background: url("image/Fond-ecran.jpg") center/cover no-repeat;
+  display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden;
+}
+section.page-haut::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(13,13,13,0.82) 0%, rgba(230,57,70,0.18) 55%, rgba(45,106,79,0.55) 100%);
+  z-index: 1;
+}
+section.page-haut::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 120px;
+  background: var(--creme); clip-path: polygon(0 60%, 100% 0%, 100% 100%, 0% 100%); z-index: 2;
+}
+.page-d-accueil { position: relative; z-index: 3; padding: 0 60px 130px; }
+.hero-eyebrow { font-family: var(--font-cond); font-size: 13px; letter-spacing: 5px; text-transform: uppercase; color: var(--or); margin-bottom: 12px; opacity: 0; animation: fadeUp 0.8s 0.3s forwards; }
+.grand-titre { font-family: var(--font-titre); font-size: clamp(64px, 10vw, 130px); line-height: 0.92; color: var(--blanc); letter-spacing: 2px; text-shadow: 4px 4px 0 var(--rouge); opacity: 0; animation: fadeUp 0.9s 0.5s forwards; }
+.grand-titre span { color: var(--or); display: block; }
+.hero-sous-titre { font-size: 18px; color: rgba(255,255,255,0.82); max-width: 520px; margin-top: 18px; line-height: 1.6; opacity: 0; animation: fadeUp 0.9s 0.7s forwards; }
+.defiler { position: absolute; bottom: 138px; right: 60px; z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--blanc); font-family: var(--font-cond); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; opacity: 0; animation: fadeUp 1s 1.1s forwards; }
+.defiler i { font-size: 22px; animation: bounce 1.8s infinite; }
+
+/* INTRO */
+section.introduction {
+  background: var(--noir); color: var(--blanc); padding: 80px 60px; position: relative; overflow: hidden;
+}
+section.introduction::before {
+  content: 'MÉXICO'; position: absolute; right: -30px; top: 50%; transform: translateY(-50%);
+  font-family: var(--font-titre); font-size: 180px; color: rgba(255,255,255,0.03); pointer-events: none; line-height: 1;
+}
+section.introduction .conteneur {
+  max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 400px; gap: 60px; align-items: center; position: relative; z-index: 1;
+}
+section.introduction h2 { font-family: var(--font-titre); font-size: clamp(36px, 5vw, 60px); color: var(--blanc); line-height: 1; margin-bottom: 8px; }
+section.introduction h2::after { content: ''; display: block; width: 56px; height: 5px; background: linear-gradient(90deg, var(--or), var(--vert-vif)); margin-top: 10px; border-radius: 2px; margin-bottom: 20px; }
+section.introduction p { font-size: 17px; color: rgba(255,255,255,0.78); line-height: 1.8; }
+section.introduction .stats { display: flex; gap: 32px; margin-top: 32px; flex-wrap: wrap; }
+section.introduction .stat { text-align: center; }
+section.introduction .stat strong { display: block; font-family: var(--font-titre); font-size: 44px; color: var(--or); line-height: 1; }
+section.introduction .stat span { font-family: var(--font-cond); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+section.introduction img { width: 100%; height: 340px; object-fit: cover; border-radius: 4px; border: 3px solid rgba(244,162,97,0.3); }
+
+/* DESTINATIONS */
+section.developpement {
+  padding: 80px 60px; background: var(--gris);
+}
+section.developpement > .conteneur { max-width: 1100px; margin: 0 auto; }
+section.developpement h1 {
+  font-family: var(--font-titre); font-size: clamp(40px, 6vw, 72px); line-height: 1; color: var(--noir); margin-bottom: 8px; letter-spacing: 1px;
+}
+section.developpement h1::after { content: ''; display: block; width: 56px; height: 5px; background: linear-gradient(90deg, var(--rouge), var(--or)); margin-top: 10px; border-radius: 2px; margin-bottom: 48px; }
+.note-tarif { font-size: 12px; color: #999; font-style: italic; margin-top: 40px; }
+
+.grille-destinations {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
+}
+
+.destination-card {
+  background: var(--blanc); border-radius: 4px; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: var(--transition);
+  border-top: 4px solid transparent; position: relative;
+}
+.destination-card:nth-child(1) { border-top-color: var(--rouge); }
+.destination-card:nth-child(2) { border-top-color: var(--or); }
+.destination-card:nth-child(3) { border-top-color: var(--vert-vif); }
+.destination-card:nth-child(4) { border-top-color: #a29bfe; }
+.destination-card:hover { transform: translateY(-6px); box-shadow: var(--ombre); }
+
+.dest-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 24px 28px 0;
+}
+.dest-header h2 {
+  font-family: var(--font-titre); font-size: 36px; color: var(--noir); line-height: 1; letter-spacing: 1px;
+}
+.dest-prix {
+  font-family: var(--font-titre); font-size: 32px; color: var(--rouge); line-height: 1;
+}
+.dest-prix small { font-family: var(--font-cond); font-size: 11px; letter-spacing: 1px; display: block; text-align: right; color: #999; font-weight: 400; text-transform: uppercase; }
+
+.dest-body { padding: 16px 28px 28px; }
+.dest-tag { display: inline-block; font-family: var(--font-cond); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--vert); background: rgba(82,183,136,0.1); padding: 3px 10px; border-radius: 2px; margin-bottom: 12px; }
+.dest-body p { font-size: 15px; color: #555; line-height: 1.75; }
+.dest-highlights { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.dest-highlights span { font-family: var(--font-cond); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: #666; background: var(--gris); padding: 4px 12px; border-radius: 2px; }
+
+/* PHOTOS / CARTE VISUELLE */
+section.photos {
+  padding: 80px 60px; background: var(--noir);
+}
+section.photos > .conteneur { max-width: 1100px; margin: 0 auto; }
+section.photos h2 { font-family: var(--font-titre); font-size: clamp(40px, 6vw, 72px); color: var(--blanc); line-height: 1; margin-bottom: 8px; }
+section.photos h2::after { content: ''; display: block; width: 56px; height: 5px; background: linear-gradient(90deg, var(--rouge), var(--or)); margin-top: 10px; border-radius: 2px; margin-bottom: 48px; }
+
+.photo-lieu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 360px);
+  gap: 16px;
+}
+
+a.lieu-mexi {
+  position: relative; display: block;
+  background-size: cover; background-position: center;
+  border-radius: 4px; overflow: hidden;
+  transition: var(--transition);
+}
+a.lieu-mexi::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 55%);
+  transition: opacity var(--transition); z-index: 1;
+}
+a.lieu-mexi:hover { transform: scale(1.01); }
+a.lieu-mexi:hover::before { opacity: 1.3; }
+
+.lieu-detail {
+  position: absolute; bottom: 0; left: 0; width: 100%;
+  padding: 20px 28px; z-index: 2; background: none;
+  display: flex; justify-content: space-between; align-items: flex-end;
+}
+
+.nom-ville {
+  font-family: var(--font-titre); font-size: 34px; color: var(--blanc);
+  line-height: 1; letter-spacing: 1px; text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.estimation {
+  font-family: var(--font-titre); font-size: 28px; color: var(--or);
+  line-height: 1; text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.estimation small {
+  display: block; font-family: var(--font-cond); font-size: 10px;
+  letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.6);
+  text-align: right; font-weight: 400;
+}
+
+/* Grande carte en haut à gauche */
+.photo-lieu a:first-child {
+  grid-column: 1; grid-row: 1 / 3;
+}
+
+.Mexico    { background-image: url(image/mexico.jpg); }
+.Cancun    { background-image: url(image/Cancùn.jpg); }
+.Playa     { background-image: url(image/Playa.jpg); }
+.Guanajuato { background-image: url(image/Guana.jpg); }
+
+/* CTA contact */
+section.cta-activites {
+  padding: 80px 60px; background: linear-gradient(135deg, var(--rouge) 0%, #9b1c24 100%);
+  text-align: center; position: relative; overflow: hidden;
+}
+section.cta-activites::before {
+  content: 'GO'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+  font-family: var(--font-titre); font-size: 260px; color: rgba(255,255,255,0.05); pointer-events: none;
+}
+section.cta-activites h2 { font-family: var(--font-titre); font-size: clamp(36px, 5vw, 64px); color: var(--blanc); margin-bottom: 16px; position: relative; z-index: 1; }
+section.cta-activites p { font-size: 18px; color: rgba(255,255,255,0.82); max-width: 540px; margin: 0 auto 36px; line-height: 1.7; position: relative; z-index: 1; }
+.bouton-blanc { display: inline-block; font-family: var(--font-cond); font-weight: 700; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; background: var(--blanc); color: var(--rouge); padding: 14px 36px; border-radius: 2px; transition: var(--transition); clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); position: relative; z-index: 1; }
+.bouton-blanc:hover { background: var(--noir); color: var(--blanc); }
+
+/* FOOTER */
+footer.copyright { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; background: var(--noir); color: rgba(255,255,255,0.7); padding: 28px 60px; border-top: 3px solid var(--rouge); font-size: 13px; }
+footer.copyright p { margin-bottom: 4px; }
+footer.copyright strong { color: var(--or); font-family: var(--font-cond); letter-spacing: 1px; }
+footer.copyright a.cgv { color: rgba(255,255,255,0.4); font-size: 12px; letter-spacing: 1px; transition: color var(--transition); text-transform: uppercase; font-family: var(--font-cond); }
+footer.copyright a.cgv:hover { color: var(--or); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  section.introduction .conteneur { grid-template-columns: 1fr; }
+  section.introduction img { height: 220px; }
+  .grille-destinations { grid-template-columns: 1fr; }
+  .photo-lieu { grid-template-columns: 1fr; grid-template-rows: repeat(4, 280px); }
+  .photo-lieu a:first-child { grid-column: 1; grid-row: 1; }
+  section.developpement, section.photos, section.introduction, section.cta-activites { padding: 56px 28px; }
+  .page-d-accueil { padding: 0 28px 110px; }
+  footer.copyright { padding: 24px 28px; }
+  nav.navigation a { font-size: 13px; padding: 6px 10px; }
+}

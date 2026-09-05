@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+    <title>YUKI - Administration</title>
+</head>
+<body>
+
+    <div id="login">
+        <div class="ligne-h" style="top: 20%"></div>
+        <div class="ligne-h" style="top: 80%"></div>
+        <div class="ligne-v" style="left: 8%"></div>
+        <div class="ligne-v" style="right: 8%"></div>
+        <span class="kanji" style="top: -40px; left: -40px;">雪</span>
+        <span class="kanji" style="bottom: -40px; right: -40px;">美</span>
+
+        <div style="text-align: center; position: relative;">
+            <p class="login-badge">Administration</p>
+            <h1 class="login-titre">雪 Yuki</h1>
+            <div class="login-deco"></div>
+            <p class="login-sous">Espace réservé</p>
+
+            <div class="login-form">
+                <label class="login-label">Email</label>
+                <input type="email" id="email-admin" class="login-input" placeholder="admin@yuki-restaurant.fr" autocomplete="username">
+                <label class="login-label">Mot de passe</label>
+                <input type="password" id="mot-de-passe" class="login-input" placeholder="••••••••" autocomplete="current-password">
+                <button class="login-btn" onclick="verifierMotDePasse()">Entrer</button>
+                <button type="button" class="login-oubli" onclick="reinitialiserMotDePasse()">Mot de passe oublié ?</button>
+                <p id="erreur-login"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin">
+        <div class="admin-nav">
+            <h1>雪 Yuki — Administration</h1>
+            <button class="btn-deconnexion" onclick="deconnexion()">Déconnexion</button>
+        </div>
+        <div class="admin-body">
+            <div class="admin-tabs">
+                <button class="admin-tab actif" data-panel="menu" onclick="changerOnglet('menu')">Gestion du menu</button>
+                <button class="admin-tab" data-panel="reservations" onclick="changerOnglet('reservations')">Réservations <span id="badge-reservations" class="tab-badge"></span></button>
+            </div>
+
+            <div id="panel-menu" class="admin-panel">
+            <section id="formulaire-plat">
+                <h2>Ajouter / Modifier un plat</h2>
+                <input type="hidden" id="plat-id">
+                <div class="form-grid">
+                    <div class="champ-admin">
+                        <label>Nom du plat</label>
+                        <input type="text" id="plat-nom" placeholder="Ex: California Roll">
+                    </div>
+                    <div class="champ-admin">
+                        <label>Prix (€)</label>
+                        <input type="text" id="plat-prix" placeholder="Ex: 14">
+                    </div>
+                    <div class="champ-admin">
+                        <label>Description</label>
+                        <input type="text" id="plat-description" placeholder="Description du plat">
+                    </div>
+                    <div class="champ-admin">
+                        <label>Catégorie</label>
+                        <select id="plat-categorie">
+                            <option value="entree">Entrée</option>
+                            <option value="sushi">Sushi</option>
+                            <option value="ramen">Ramen</option>
+                            <option value="dessert">Dessert</option>
+                            <option value="boisson">Boisson</option>
+                        </select>
+                    </div>
+                    <div class="champ-admin" style="grid-column: 1 / -1;">
+                        <label>Image (chemin ou URL)</label>
+                        <input type="text" id="plat-image" placeholder="Image/nom-du-fichier.jpg">
+                    </div>
+                </div>
+                <button class="btn-admin" onclick="sauvegarderPlat()">Sauvegarder</button>
+            </section>
+
+            <section id="liste-plats-admin">
+                <h2>Plats existants</h2>
+                <div id="plats-container-admin"></div>
+            </section>
+            </div>
+
+            <div id="panel-reservations" class="admin-panel" style="display: none;">
+                <section id="liste-reservations">
+                    <h2>Réservations reçues</h2>
+                    <p class="reservations-vide" id="reservations-vide">Aucune réservation pour le moment.</p>
+                    <div id="reservations-container"></div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

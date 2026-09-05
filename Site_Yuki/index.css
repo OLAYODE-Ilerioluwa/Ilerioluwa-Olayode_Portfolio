@@ -1,0 +1,440 @@
+/* ===== INDEX.HTML ===== */
+
+/* Header */
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)),
+                      url('Image/felix-ngo--s9MPEdgzjQ-unsplash.jpg');
+    background-position: center 40%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 700px;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: relative;
+}
+
+.hero-texte {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
+@keyframes heroReveal {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: none; }
+}
+
+.hero-texte h1 {
+    animation: heroReveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-texte p {
+    animation: heroReveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-texte h1,
+    .hero-texte p,
+    .reservation-confirmation { animation: none; }
+}
+
+/* About */
+
+.about {
+    padding: 80px 40px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.about h2 {
+    font-size: var(--text-2xl);
+    margin-bottom: 20px;
+    color: #2c2c2c;
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* Réservation */
+
+.reservation {
+    background-color: #1a1a1a;
+    padding: 60px 40px;
+    color: white;
+}
+
+.reservation-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c0392b;
+    margin-bottom: 12px;
+}
+
+.reservation-badge::before,
+.reservation-badge::after {
+    content: "";
+    width: 36px;
+    height: 1px;
+    background-color: rgba(192, 57, 43, 0.5);
+}
+
+.reservation h2 {
+    font-size: var(--text-2xl);
+    margin-bottom: 40px;
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+
+.reservation form {
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.champ {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.champ label {
+    color: #aaa;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.champ input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #555;
+    color: white;
+    padding: 8px 4px;
+    font-size: 15px;
+    width: 150px;
+    outline: none;
+}
+
+.champ input::placeholder {
+    color: rgba(255,255,255,0.55);
+}
+
+.champ input:focus {
+    border-bottom-color: #c0392b;
+}
+
+.reservation button {
+    margin-top: 0;
+}
+
+.nombre-personnes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 8px;
+}
+
+.nombre-personnes span {
+    font-size: 15px;
+    color: white;
+    min-width: 20px;
+    text-align: center;
+}
+
+.btn-compteur {
+    background: transparent !important;
+    color: white !important;
+    border: 1px solid #555 !important;
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 18px !important;
+    cursor: pointer;
+    padding: 0 5px;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    border-radius: 8px !important;
+}
+
+.reservation-confirmation {
+    text-align: center;
+    padding: 20px 0;
+    animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reservation-confirmation h2 {
+    font-size: var(--text-2xl);
+    color: white;
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+.confirmation-details {
+    color: rgba(255,255,255,0.7);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.confirmation-email {
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+.btn-annuler {
+    background: transparent;
+    color: #e74c3c;
+    border: 1px solid rgba(231,76,60,0.4);
+    padding: 10px 28px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-annuler:hover {
+    background: rgba(231,76,60,0.1);
+    border-color: #e74c3c;
+}
+
+/* Section menu (accueil) */
+
+.menu {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu h2 {
+    font-size: var(--text-2xl);
+    margin-bottom: 40px;
+    color: #2c2c2c;
+}
+
+/* Avis (accueil) */
+
+#avis {
+    display: flex;
+    min-height: 400px;
+}
+
+.avis-gauche {
+    background-color: #1a1a1a;
+    flex: 1;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.avis-badge {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c0392b;
+    margin-bottom: 12px;
+}
+
+.avis-badge::before {
+    content: "声";
+    font-family: var(--font-display);
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 1;
+    color: #c0392b;
+}
+
+#avis h2 {
+    font-size: var(--text-2xl);
+    color: white;
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+.avis-desc {
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.avis-img {
+    width: 160px;
+    object-fit: contain;
+}
+
+.avis-droite {
+    background-color: #ffffff;
+    flex: 1;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#avis form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+}
+
+#avis input, #avis textarea, #avis select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#liste-avis {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contact */
+
+#contact {
+    padding: 60px 40px;
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: var(--text-2xl);
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.contact-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-infos {
+    flex: 1;
+}
+
+.contact-map {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 450px;
+    display: block;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+    #avis {
+        flex-direction: column;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contact-map iframe {
+        height: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        height: 480px;
+        background-attachment: scroll;
+    }
+
+    .hero-texte {
+        font-size: 20px;
+        width: 90%;
+    }
+
+    .about,
+    .menu,
+    #contact {
+        padding: 56px 24px;
+    }
+
+    .about p {
+        font-size: 16px;
+    }
+
+    .reservation {
+        padding: 48px 24px;
+    }
+
+    .reservation form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .champ input {
+        width: 100%;
+    }
+
+    .nombre-personnes {
+        justify-content: space-between;
+    }
+
+    .reservation button {
+        width: 100%;
+    }
+
+    .avis-gauche,
+    .avis-droite {
+        padding: 48px 24px;
+    }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+    <title>YUKI - Restaurant Japonais</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="logo-img" src="Image/Sleek_logo_design_for__Yuki__restaurant-removebg-preview.png" alt="Yuki">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-cb">
+            <label for="nav-toggle" class="nav-burger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></label>
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="menu.html">Menu</a>
+                <a href="avis.html">Avis</a>
+                <a href="#contact">Contact</a>
+                <a href="#reservation">Réservation</a>
+            </div>
+        </nav>
+        
+        <div class="hero-texte">
+            <h1>YUKI</h1>
+            <p>L'art japonais dans chaque assiette</p>
+        </div>
+    </header>
+    
+    
+
+    <section class="about">
+        <h2>A propos de nous</h2>
+        <p>Depuis 2010, notre chef Kenji Tanaka vous propose une cuisine japonaise authentique préparée avec passion. Poissons frais du marché, riz japonais sélectionné et sauces maison ,chaque plat est une invitation au voyage.</p>
+
+    </section>
+    <section class="reservation" id="reservation">
+        <p class="reservation-badge">Réservation</p>
+        <h2>Réserver une table</h2>
+        <form>
+            <div class="champ">
+                <label>PRÉNOM</label>
+                <input type="text" placeholder="Votre prénom">
+            </div>
+            <div class="champ">
+                <label>NOM</label>
+                <input type="text" placeholder="Votre nom">
+            </div>
+            <div class="champ">
+                <label>DATE</label>
+                <input type="date">
+            </div>
+            <div class="champ">
+                <label>HEURE</label>
+                <input type="time">
+            </div>
+            <div class="champ">
+                <label>EMAIL</label>
+                <input type="email" id="email-client" placeholder="Votre email">
+            </div>
+            <div class="champ">
+                <label>PERSONNES</label>
+                <div class="nombre-personnes">
+                    <button type="button" class="btn-compteur" id="moins">-</button>
+                    <span id="compteur">2</span>
+                    <button type="button" class="btn-compteur" id="plus">+</button>
+                </div>
+            </div>
+            <button type="submit">RÉSERVER</button>
+        </form>
+    </section>
+
+    <section class="menu">
+        <h2>Notre Menu</h2>
+        <div class="plats-container"></div>
+        <a href="menu.html" class="btn-menu">Voir tout le menu</a>
+    </section>
+
+    <section id="avis">
+        <div class="avis-gauche">
+            <p class="avis-badge">Avis clients</p>
+            <h2>Ce que disent nos clients</h2>
+            <p class="avis-desc">Depuis 2010, nos clients nous font confiance. Partagez votre expérience.</p>
+            <img src="Image/Avis.png" class="avis-img" alt="Shiba Inu">
+        </div>
+        <div class="avis-droite">
+            <form id="form-avis">
+                <input type="text" id="nom-avis" placeholder="Votre prénom">
+                <textarea id="texte-avis" placeholder="Votre avis..." rows="4"></textarea>
+                <div class="etoiles-custom">
+                    <span class="etoile" data-valeur="1">★</span>
+                    <span class="etoile" data-valeur="2">★</span>
+                    <span class="etoile" data-valeur="3">★</span>
+                    <span class="etoile" data-valeur="4">★</span>
+                    <span class="etoile" data-valeur="5">★</span>
+                </div>
+                <input type="hidden" id="note-avis" value="5">
+                <button type="submit">Envoyer</button>
+            </form>
+            <div id="liste-avis"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-container">
+            <div class="contact-infos">
+                <h2>Nous contacter</h2>
+                <p>📍 22 rue des Infos, 75010 Paris</p>
+                <p>📞 +33 1 25 14 95 36</p>
+                <p>📧 contact@yuki-restaurant.fr</p>
+                <p>🕐 Lundi - Samedi : 12h00 - 22h30 | Dimanche : Fermé</p>
+            </div>
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d41348.878679531845!2d2.451670987353505!3d49.6297074829544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sfr!4v1783185502380!5m2!1sen!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Restaurant YUKI — Tous droits réservés</p>
+        <p style="margin-top:14px;font-size:.8rem;opacity:.75;">Site réalisé par <a href="https://studio-nvxl.web.app" style="color:inherit;">Studio NVXL</a></p>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+/* ===== AVIS.HTML ===== */
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)),
+                      url('Image/felix-ngo--s9MPEdgzjQ-unsplash.jpg');
+    background-position: center 40%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 700px;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-texte {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
+#avis-page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+#avis-page > * {
+    margin-bottom: 40px;
+}
+
+#moyenne-container {
+    text-align: center;
+}
+
+#moyenne-container h2 {
+    font-size: var(--text-2xl);
+    margin-bottom: 10px;
+    color: #2c2c2c;
+}
+
+#moyenne-etoiles {
+    font-size: 36px;
+    color: #f39c12;
+    margin-bottom: 6px;
+}
+
+#moyenne-texte {
+    color: #555;
+    font-size: 16px;
+}
+
+#avis-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+#avis-page form h2 {
+    font-size: var(--text-2xl);
+    color: #2c2c2c;
+    margin-bottom: 10px;
+}
+
+#avis-page input, #avis-page textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#liste-avis {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+    header {
+        height: 480px;
+        background-attachment: scroll;
+    }
+
+    .hero-texte {
+        font-size: 20px;
+        width: 90%;
+    }
+
+    #avis-page {
+        padding: 48px 24px;
+    }
+}

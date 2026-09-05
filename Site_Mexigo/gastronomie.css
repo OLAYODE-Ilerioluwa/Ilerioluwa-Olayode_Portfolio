@@ -1,0 +1,260 @@
+/* ============================================================
+   MexiGo — Gastronomie CSS (style cohérent avec Accueil)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@400;600;700;800&display=swap');
+
+/* ── Variables (identiques à accueil.css) ───────────────────── */
+:root {
+  --rouge:    #e63946;
+  --vert:     #2d6a4f;
+  --vert-vif: #52b788;
+  --or:       #f4a261;
+  --noir:     #0d0d0d;
+  --creme:    #fdf6ec;
+  --gris:     #f0ebe3;
+  --texte:    #1a1a1a;
+  --blanc:    #ffffff;
+  --font-titre: 'Bebas Neue', cursive;
+  --font-cond:  'Barlow Condensed', sans-serif;
+  --font-body:  'Barlow', sans-serif;
+  --ombre: 0 8px 40px rgba(0,0,0,0.18);
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background-color: var(--creme); color: var(--texte); padding-top: 72px; overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a   { text-decoration: none; }
+ul  { list-style: none; }
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── HEADER (identique accueil) ─────────────────────────────── */
+header.entete {
+  display: flex; align-items: center; justify-content: space-between;
+  background-color: var(--noir); padding: 0 32px; height: 72px;
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  transition: transform 0.4s ease, box-shadow 0.3s;
+  border-bottom: 3px solid var(--rouge);
+}
+header.entete.hidden { transform: translateY(-100%); }
+header.entete.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+header.entete img { height: 46px; width: auto; }
+
+nav.navigation { display: flex; gap: 8px; align-items: center; position: static; transform: none; width: auto; }
+nav.navigation li { display: inline-block; }
+nav.navigation a { font-family: var(--font-cond); font-weight: 700; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: var(--blanc); padding: 8px 16px; border: 2px solid transparent; border-radius: 2px; transition: var(--transition); }
+nav.navigation a:hover, nav.navigation a.active { color: var(--or); border-color: var(--or); }
+
+/* ── HERO ───────────────────────────────────────────────────── */
+section.page-haut {
+  position: relative; height: 100vh; min-height: 600px;
+  background: url("image/Fond-ecran.jpg") center/cover no-repeat;
+  display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden;
+}
+section.page-haut::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(13,13,13,0.82) 0%, rgba(244,162,97,0.2) 60%, rgba(45,106,79,0.5) 100%);
+  z-index: 1;
+}
+section.page-haut::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 120px;
+  background: var(--creme); clip-path: polygon(0 60%, 100% 0%, 100% 100%, 0% 100%); z-index: 2;
+}
+
+.page-d-accueil { position: relative; z-index: 3; padding: 0 60px 130px; }
+
+.hero-eyebrow { font-family: var(--font-cond); font-size: 13px; letter-spacing: 5px; text-transform: uppercase; color: var(--or); margin-bottom: 12px; opacity: 0; animation: fadeUp 0.8s 0.3s forwards; }
+
+.grand-titre { font-family: var(--font-titre); font-size: clamp(64px, 10vw, 130px); line-height: 0.92; color: var(--blanc); letter-spacing: 2px; text-shadow: 4px 4px 0 var(--rouge); opacity: 0; animation: fadeUp 0.9s 0.5s forwards; }
+.grand-titre span { color: var(--or); display: block; }
+
+.hero-sous-titre { font-size: 18px; color: rgba(255,255,255,0.82); max-width: 520px; margin-top: 18px; line-height: 1.6; opacity: 0; animation: fadeUp 0.9s 0.7s forwards; }
+
+.defiler { position: absolute; bottom: 138px; right: 60px; z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--blanc); font-family: var(--font-cond); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; opacity: 0; animation: fadeUp 1s 1.1s forwards; }
+.defiler i { font-size: 22px; animation: bounce 1.8s infinite; }
+
+/* ── INTRO GASTRONOMIE ──────────────────────────────────────── */
+section.intro-gastro {
+  background: var(--noir); color: var(--blanc); padding: 80px 60px; position: relative; overflow: hidden;
+}
+section.intro-gastro::before {
+  content: 'SABORES'; position: absolute; right: -30px; top: 50%; transform: translateY(-50%);
+  font-family: var(--font-titre); font-size: 160px; color: rgba(255,255,255,0.03); pointer-events: none; line-height: 1;
+}
+section.intro-gastro .conteneur { max-width: 760px; position: relative; z-index: 1; }
+section.intro-gastro h2 { font-family: var(--font-titre); font-size: clamp(36px, 5vw, 60px); line-height: 1; color: var(--blanc); margin-bottom: 8px; }
+section.intro-gastro h2::after { content: ''; display: block; width: 56px; height: 5px; background: linear-gradient(90deg, var(--or), var(--vert-vif)); margin-top: 10px; border-radius: 2px; }
+section.intro-gastro p { font-size: 18px; color: rgba(255,255,255,0.78); line-height: 1.75; margin-top: 20px; }
+
+/* ── SECTION PLATS ──────────────────────────────────────────── */
+section.plats { padding: 80px 60px; background: var(--creme); }
+section.plats > .plats-header { max-width: 1100px; margin: 0 auto 60px; }
+
+section.plats h1 {
+  font-family: var(--font-titre); font-size: clamp(40px, 6vw, 72px); line-height: 1;
+  color: var(--noir); margin-bottom: 8px; letter-spacing: 1px;
+}
+section.plats h1::after { content: ''; display: block; width: 56px; height: 5px; background: linear-gradient(90deg, var(--rouge), var(--or)); margin-top: 10px; border-radius: 2px; }
+
+/* Compteur de plat */
+.plats-grille { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+
+.plat {
+  display: grid; grid-template-columns: 420px 1fr;
+  align-items: stretch; overflow: hidden;
+  background: var(--blanc); border-radius: 4px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  transition: var(--transition); margin-bottom: 32px;
+  position: relative;
+}
+.plat:hover { transform: translateY(-4px); box-shadow: var(--ombre); }
+
+/* Alternance image droite/gauche */
+.plat:nth-child(even) { grid-template-columns: 1fr 420px; }
+.plat:nth-child(even) img { order: 2; }
+.plat:nth-child(even) .texte-plat { order: 1; }
+
+.plat img {
+  width: 100%; height: 300px; object-fit: cover;
+  display: block; filter: saturate(1.1);
+  transition: transform 0.6s ease, filter 0.4s;
+}
+.plat:hover img { transform: scale(1.04); filter: saturate(1.25); }
+
+.texte-plat {
+  padding: 44px 48px; display: flex; flex-direction: column; justify-content: center; position: relative;
+}
+
+/* Numéro déco */
+.texte-plat::before {
+  content: attr(data-num);
+  position: absolute; top: 20px; right: 28px;
+  font-family: var(--font-titre); font-size: 80px; color: rgba(0,0,0,0.04); line-height: 1;
+}
+
+.plat-tag {
+  display: inline-block; font-family: var(--font-cond); font-size: 11px;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--rouge);
+  background: rgba(230,57,70,0.08); padding: 4px 12px; border-radius: 2px;
+  margin-bottom: 16px; align-self: flex-start;
+}
+
+.texte-plat h2 {
+  font-family: var(--font-titre); font-size: clamp(32px, 3vw, 46px);
+  color: var(--noir); line-height: 1; margin-bottom: 16px; letter-spacing: 1px;
+}
+
+.texte-plat p {
+  font-size: 16px; line-height: 1.8; color: #555;
+}
+
+.plat-detail {
+  display: flex; gap: 20px; margin-top: 24px; flex-wrap: wrap;
+}
+
+.plat-detail span {
+  font-family: var(--font-cond); font-size: 13px; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--vert); display: flex; align-items: center; gap: 6px;
+}
+
+.plat-detail span i { font-size: 14px; color: var(--or); }
+
+/* Ligne séparatrice colorée en haut de la card */
+.plat::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--rouge), var(--or));
+  z-index: 1;
+}
+
+/* ── SECTION BOISSONS ───────────────────────────────────────── */
+section.boissons {
+  padding: 80px 60px;
+  background: linear-gradient(135deg, var(--vert) 0%, #1b4332 100%);
+  color: var(--blanc); position: relative; overflow: hidden;
+}
+section.boissons::before {
+  content: 'BEBIDAS'; position: absolute; right: -30px; top: 50%; transform: translateY(-50%);
+  font-family: var(--font-titre); font-size: 160px; color: rgba(255,255,255,0.04); pointer-events: none;
+}
+section.boissons .conteneur { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+section.boissons h2 { font-family: var(--font-titre); font-size: clamp(36px, 5vw, 60px); color: var(--blanc); line-height: 1; margin-bottom: 8px; }
+section.boissons h2::after { content: ''; display: block; width: 56px; height: 5px; background: linear-gradient(90deg, var(--or), var(--vert-vif)); margin-top: 10px; border-radius: 2px; margin-bottom: 40px; }
+
+.grille-boissons {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px;
+}
+
+.carte-boisson {
+  background: rgba(255,255,255,0.08); border-radius: 4px; padding: 32px 28px;
+  border: 1px solid rgba(255,255,255,0.12); transition: var(--transition); text-align: center;
+}
+.carte-boisson:hover { background: rgba(255,255,255,0.15); transform: translateY(-6px); }
+
+.carte-boisson .icone {
+  font-size: 40px; margin-bottom: 16px; display: block;
+}
+
+.carte-boisson h3 {
+  font-family: var(--font-titre); font-size: 28px; color: var(--or);
+  margin-bottom: 10px; letter-spacing: 1px;
+}
+.carte-boisson h3::after { display: none; }
+
+.carte-boisson p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+
+/* ── CONSEIL CULINAIRE ──────────────────────────────────────── */
+section.conseil {
+  background: var(--gris); padding: 80px 60px;
+}
+section.conseil .conteneur { max-width: 900px; margin: 0 auto; }
+section.conseil h2 { font-family: var(--font-titre); font-size: clamp(36px, 5vw, 60px); color: var(--noir); line-height: 1; margin-bottom: 8px; }
+section.conseil h2::after { content: ''; display: block; width: 56px; height: 5px; background: linear-gradient(90deg, var(--rouge), var(--or)); margin-top: 10px; border-radius: 2px; margin-bottom: 28px; }
+
+.conseils-liste {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px;
+}
+
+.conseil-item {
+  background: var(--blanc); padding: 28px 24px; border-radius: 4px;
+  border-left: 4px solid var(--or); box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  transition: var(--transition);
+}
+.conseil-item:hover { transform: translateX(4px); box-shadow: var(--ombre); }
+
+.conseil-item h4 { font-family: var(--font-cond); font-size: 16px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--rouge); margin-bottom: 10px; }
+.conseil-item p { font-size: 14px; color: #555; line-height: 1.7; }
+
+/* ── FOOTER ─────────────────────────────────────────────────── */
+footer.copyright {
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
+  background: var(--noir); color: rgba(255,255,255,0.7); padding: 28px 60px;
+  border-top: 3px solid var(--rouge); font-size: 13px;
+}
+footer.copyright p { margin-bottom: 4px; }
+footer.copyright strong { color: var(--or); font-family: var(--font-cond); letter-spacing: 1px; }
+footer.copyright a.cgv { color: rgba(255,255,255,0.4); font-size: 12px; letter-spacing: 1px; transition: color var(--transition); text-transform: uppercase; font-family: var(--font-cond); }
+footer.copyright a.cgv:hover { color: var(--or); }
+
+/* ── ANIMATIONS ─────────────────────────────────────────────── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .plat, .plat:nth-child(even) { grid-template-columns: 1fr; }
+  .plat:nth-child(even) img { order: 0; }
+  .plat:nth-child(even) .texte-plat { order: 0; }
+  .plat img { height: 220px; }
+  .grille-boissons { grid-template-columns: 1fr; }
+  .conseils-liste { grid-template-columns: 1fr; }
+  section.plats, section.boissons, section.conseil, section.intro-gastro { padding: 56px 28px; }
+  .page-d-accueil { padding: 0 28px 110px; }
+  footer.copyright { padding: 24px 28px; }
+  nav.navigation { gap: 4px; }
+  nav.navigation a { font-size: 13px; padding: 6px 10px; }
+}

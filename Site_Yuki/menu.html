@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+    <title>Menu - YUKI</title>
+</head>
+<body>
+
+    <nav>
+        <img class="logo-img" src="Image/Sleek_logo_design_for__Yuki__restaurant-removebg-preview.png" alt="Yuki">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-cb">
+        <label for="nav-toggle" class="nav-burger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></label>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="menu.html">Menu</a>
+            <a href="avis.html">Avis</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="index.html#reservation">Réservation</a>
+        </div>
+    </nav>
+
+    <div class="menu-hero">
+        <h1>Notre Menu</h1>
+        <p>Une cuisine japonaise authentique</p>
+    </div>
+
+    <section class="menu-page">
+        <div class="filtres">
+            <button class="filtre actif" data-filtre="tout">Tout</button>
+            <button class="filtre" data-filtre="entree">Entrées</button>
+            <button class="filtre" data-filtre="sushi">Sushis</button>
+            <button class="filtre" data-filtre="ramen">Ramens</button>
+            <button class="filtre" data-filtre="dessert">Desserts</button>
+            <button class="filtre" data-filtre="boisson">Boissons</button>
+        </div>
+
+        <div class="plats-container" id="grille-menu"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Restaurant YUKI — Tous droits réservés</p>
+        <p style="margin-top:14px;font-size:.8rem;opacity:.75;">Site réalisé par <a href="https://studio-nvxl.web.app" style="color:inherit;">Studio NVXL</a></p>
+  </footer>
+
+    <script type="module" src="menu.js"></script>
+</body>
+</html>

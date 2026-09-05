@@ -1,0 +1,509 @@
+﻿/* ===== ADMIN.HTML ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1a1a1a;
+    color: white;
+    min-height: 100vh;
+}
+
+#login {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ligne-h {
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: rgba(192,57,43,0.15);
+}
+
+.ligne-v {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: rgba(192,57,43,0.15);
+}
+
+.kanji {
+    position: absolute;
+    font-size: 200px;
+    color: rgba(255,255,255,0.03);
+    font-family: serif;
+    user-select: none;
+}
+
+.login-badge {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c0392b;
+    margin-bottom: 16px;
+}
+
+.login-titre {
+    font-family: 'Shippori Mincho', Georgia, serif;
+    font-size: 52px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.login-deco {
+    width: 40px;
+    height: 1px;
+    background: #c0392b;
+    margin: 16px auto 8px;
+}
+
+.login-sous {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 32px;
+}
+
+.login-form {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 32px 40px;
+    width: 340px;
+    text-align: left;
+    position: relative;
+}
+
+.login-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.login-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    padding: 8px 0;
+    outline: none;
+    margin-bottom: 24px;
+    font-family: 'Jost', system-ui, sans-serif;
+}
+
+.login-input:focus {
+    border-bottom-color: #c0392b;
+}
+
+.login-btn {
+    background: #c0392b;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: 'Jost', system-ui, sans-serif;
+}
+
+.login-btn:hover { background: #962d22; }
+.login-btn:active { transform: scale(0.97); }
+
+.login-oubli {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 12px;
+    width: 100%;
+    margin-top: 14px;
+    padding: 4px;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: 'Jost', system-ui, sans-serif;
+    transition: color 0.25s;
+}
+
+.login-oubli:hover { color: rgba(255,255,255,0.85); }
+
+#erreur-login {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+#admin { display: none; }
+
+/* Interface admin */
+
+.admin-nav {
+    background: #111;
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.admin-nav h1 {
+    font-family: 'Shippori Mincho', Georgia, serif;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.admin-nav span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c0392b;
+}
+
+.btn-deconnexion {
+    background: transparent;
+    color: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 8px 18px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color 0.25s, border-color 0.25s, background 0.25s;
+    font-family: 'Jost', system-ui, sans-serif;
+}
+
+.btn-deconnexion:hover {
+    color: white;
+    border-color: #c0392b;
+    background: rgba(192,57,43,0.15);
+}
+
+.admin-body {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+#formulaire-plat {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 32px;
+    margin-bottom: 40px;
+}
+
+#formulaire-plat h2 {
+    font-family: 'Shippori Mincho', Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 24px;
+    color: rgba(255,255,255,0.9);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.champ-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.champ-admin label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+}
+
+.champ-admin input, .champ-admin select {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    padding: 8px 0;
+    font-size: 14px;
+    outline: none;
+    font-family: 'Jost', system-ui, sans-serif;
+}
+
+.champ-admin select option {
+    background: #2c2c2c;
+}
+
+.champ-admin input:focus, .champ-admin select:focus {
+    border-bottom-color: #c0392b;
+}
+
+.btn-admin {
+    margin-top: 24px;
+    background: #c0392b;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: 'Jost', system-ui, sans-serif;
+}
+
+.btn-admin:hover { background: #962d22; }
+.btn-admin:active { transform: scale(0.97); }
+
+#liste-plats-admin h2 {
+    font-family: 'Shippori Mincho', Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.plat-admin {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.plat-admin-info strong { font-size: 15px; }
+
+.plat-admin-info .cat {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #c0392b;
+    margin-top: 2px;
+}
+
+.plat-admin-info p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+}
+
+.plat-admin-prix {
+    font-size: 16px;
+    color: #c0392b;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.plat-admin-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-modifier {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 6px 14px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Jost', system-ui, sans-serif;
+}
+
+.btn-modifier:hover { border-color: white; }
+
+.btn-supprimer {
+    background: transparent;
+    color: #e74c3c;
+    border: 1px solid rgba(231,76,60,0.3);
+    padding: 6px 14px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Jost', system-ui, sans-serif;
+}
+
+.btn-supprimer:hover { background: rgba(231,76,60,0.1); }
+
+/* ===== ONGLETS ===== */
+
+.admin-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.admin-tab {
+    background: transparent;
+    color: rgba(255,255,255,0.5);
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 12px 20px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.25s, border-color 0.25s;
+    font-family: 'Jost', system-ui, sans-serif;
+    margin-bottom: -1px;
+}
+
+.admin-tab:hover { color: rgba(255,255,255,0.85); }
+
+.admin-tab.actif {
+    color: white;
+    border-bottom-color: #c0392b;
+}
+
+.tab-badge {
+    display: inline-block;
+    min-width: 18px;
+    padding: 1px 6px;
+    margin-left: 4px;
+    font-size: 11px;
+    letter-spacing: 0;
+    background: #c0392b;
+    color: white;
+    border-radius: 999px;
+    text-align: center;
+}
+
+.tab-badge:empty { display: none; }
+
+/* ===== RÉSERVATIONS ===== */
+
+#liste-reservations h2 {
+    font-family: 'Shippori Mincho', Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.reservations-vide {
+    color: rgba(255,255,255,0.4);
+    font-size: 14px;
+}
+
+.reservation-admin {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.resa-quand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 130px;
+    padding-right: 24px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.resa-date {
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    text-transform: capitalize;
+}
+
+.resa-heure {
+    font-family: 'Shippori Mincho', Georgia, serif;
+    font-size: 22px;
+    color: #c0392b;
+    margin-top: 2px;
+}
+
+.resa-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.resa-infos strong { font-size: 15px; }
+
+.resa-personnes {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+}
+
+.resa-email {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.resa-email:hover { color: #c0392b; }
+
+.btn-supprimer-resa {
+    background: transparent;
+    color: #e74c3c;
+    border: 1px solid rgba(231,76,60,0.3);
+    padding: 6px 14px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: 'Jost', system-ui, sans-serif;
+    white-space: nowrap;
+}
+
+.btn-supprimer-resa:hover { background: rgba(231,76,60,0.1); }
+
+@media (max-width: 640px) {
+    .reservation-admin {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+    .resa-quand {
+        flex-direction: row;
+        gap: 12px;
+        min-width: 0;
+        padding-right: 0;
+        padding-bottom: 12px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        justify-content: flex-start;
+    }
+}
