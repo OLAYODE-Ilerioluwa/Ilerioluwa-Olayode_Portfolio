@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="16" style="-fx-background-color: #f5f5f5; -fx-padding: 40px;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sio.realisationslam.CreationController">
+
+    <!-- TITRE -->
+    <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #222222;" text="Donjons &amp; Dragons" />
+    <Label style="-fx-font-size: 13px; -fx-text-fill: #888888;" text="Créez votre personnage" />
+
+    <!-- SEPARATEUR -->
+    <Region maxWidth="320" style="-fx-background-color: #dddddd; -fx-pref-height: 1px;" />
+
+    <!-- NOM -->
+    <VBox alignment="CENTER" spacing="6">
+        <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #555555;" text="Nom du héros" />
+        <TextField fx:id="nomField" promptText="Votre nom..." style="-fx-background-color: white; -fx-border-color: #dddddd; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-padding: 8px 12px; -fx-font-size: 13px; -fx-pref-width: 280px;" />
+    </VBox>
+
+    <!-- GENRE -->
+    <VBox alignment="CENTER" spacing="6">
+        <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #555555;" text="Genre" />
+        <HBox alignment="CENTER" spacing="10">
+            <Button fx:id="btnMale" onAction="#choisirMale" style="-fx-background-color: white; -fx-border-color: #dddddd; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-text-fill: #444444; -fx-font-size: 12px; -fx-pref-width: 130px; -fx-pref-height: 36px; -fx-cursor: hand;" text="♂  Masculin" />
+            <Button fx:id="btnFemelle" onAction="#choisirFemelle" style="-fx-background-color: white; -fx-border-color: #dddddd; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-text-fill: #444444; -fx-font-size: 12px; -fx-pref-width: 130px; -fx-pref-height: 36px; -fx-cursor: hand;" text="♀  Féminin" />
+            <Button fx:id="btnAutre" onAction="#choisirAutre" style="-fx-background-color: white; -fx-border-color: #dddddd; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-text-fill: #444444; -fx-font-size: 12px; -fx-pref-width: 130px; -fx-pref-height: 36px; -fx-cursor: hand;" text="Autre" />
+        </HBox>
+    </VBox>
+
+    <!-- CLASSE -->
+    <VBox alignment="CENTER" spacing="6">
+        <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #555555;" text="Classe" />
+        <HBox alignment="CENTER" spacing="10">
+            <Button fx:id="btnGuerrier" onAction="#choisirGuerrier" style="-fx-background-color: white; -fx-border-color: #dddddd; -fx-border-radius: 6px; -fx-background-radius: 6px; -fx-pref-width: 120px; -fx-pref-height: 80px; -fx-cursor: hand;">
+                <graphic>
+                    <VBox alignment="CENTER" spacing="4">
+                        <Label style="-fx-font-size: 20px;" text="⚔" />
+                        <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Guerrier" />
+                        <Label style="-fx-font-size: 9px; -fx-text-fill: #999999;" text="Force" />
+                    </VBox>
+                </graphic>
+            </Button>
+            <Button fx:id="btnMage" onAction="#choisirMage" style="-fx-background-color: white; -fx-border-color: #dddddd; -fx-border-radius: 6px; -fx-background-radius: 6px; -fx-pref-width: 120px; -fx-pref-height: 80px; -fx-cursor: hand;">
+                <graphic>
+                    <VBox alignment="CENTER" spacing="4">
+                        <Label style="-fx-font-size: 20px;" text="✦" />
+                        <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Mage" />
+                        <Label style="-fx-font-size: 9px; -fx-text-fill: #999999;" text="Magie" />
+                    </VBox>
+                </graphic>
+            </Button>
+            <Button fx:id="btnArcher" onAction="#choisirArcher" style="-fx-background-color: white; -fx-border-color: #dddddd; -fx-border-radius: 6px; -fx-background-radius: 6px; -fx-pref-width: 120px; -fx-pref-height: 80px; -fx-cursor: hand;">
+                <graphic>
+                    <VBox alignment="CENTER" spacing="4">
+                        <Label style="-fx-font-size: 20px;" text="🏹" />
+                        <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Archer" />
+                        <Label style="-fx-font-size: 9px; -fx-text-fill: #999999;" text="Précision" />
+                    </VBox>
+                </graphic>
+            </Button>
+        </HBox>
+    </VBox>
+
+    <!-- SELECTION INFO -->
+    <Label fx:id="selectionText" style="-fx-font-size: 11px; -fx-text-fill: #4a90d9; -fx-font-style: italic;" text="" />
+
+    <!-- SEPARATEUR -->
+    <Region maxWidth="320" style="-fx-background-color: #dddddd; -fx-pref-height: 1px;" />
+
+
+
+    <!-- BOUTON COMMENCER -->
+    <Button onAction="#commencer" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold; -fx-pref-width: 280px; -fx-pref-height: 42px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-cursor: hand;" text="Commencer l'aventure →" />
+   <Button layoutX="116.0" layoutY="476.0" onAction="#CreerEnnemi" prefHeight="32.0" prefWidth="183.0" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold; -fx-pref-width: 280px; -fx-pref-height: 42px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-cursor: hand;" text="Creer un ennemi" />
+
+</VBox>
