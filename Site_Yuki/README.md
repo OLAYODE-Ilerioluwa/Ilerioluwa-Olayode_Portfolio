@@ -7,8 +7,6 @@ Projet personnel. Le restaurant est fictif, le site a servi de terrain pour
 apprendre à brancher une base de données et une authentification sur un site
 statique.
 
-🔗 **[Voir le site en ligne](https://olayode-ilerioluwa.github.io/Projet-Portfolio/yuki/)**
-
 ---
 
 ## Ce que fait le site
