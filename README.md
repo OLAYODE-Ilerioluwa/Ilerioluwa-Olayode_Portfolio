@@ -36,4 +36,4 @@ Site entièrement statique, sans framework ni étape de build.
 ## Contact
 
 - LinkedIn : [ileri-olayode](https://www.linkedin.com/in/ileri-olayode)
-- Email : iolayode@lerebours.fr
+- Email : iolayode@lerebours.fr/iolayode@outlook.fr
