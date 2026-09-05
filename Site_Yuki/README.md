@@ -101,7 +101,6 @@ Site_Yuki/
 ├── script.js                   Réservation, avis, animations
 ├── firebase.js                 Initialisation Firestore et Auth
 ├── firestore.rules             Règles d'accès à la base
-├── PRODUCT.md                  Le cadrage écrit avant de commencer
 └── Image/                      Logo et photographies
 ```
 
@@ -124,13 +123,4 @@ définis par `firestore.rules`.
 
 ---
 
-## Ce que j'en retiens
 
-J'ai commencé par écrire le cadrage ([`PRODUCT.md`](PRODUCT.md)) avant la
-première ligne de code : à qui s'adresse le site, quel ton, et ce que je ne
-voulais pas faire (pas de fond rouge et noir stéréotypé, pas de temple ni de
-cerisier). Ça m'a évité de dessiner au hasard.
-
-Le vrai apprentissage a été de comprendre que la sécurité ne se joue pas dans
-le formulaire mais dans les règles de la base. Tant que je vérifiais les
-champs en JavaScript, je ne vérifiais rien du tout.
