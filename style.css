@@ -1,4 +1,82 @@
-.header nav a {
+body{
+    font-family: "Kanit";
+}
+
+.navbar{
+    position: flex;
+    padding: 10px;
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(181, 174, 174);
+    
+}
+
+.navbar a {
     text-decoration: none;
     color: inherit;
+    
+}
+
+.navbar-link ul{
+    display: flex;
+    
+}
+
+.navbar-link ul li{
+    display: flex;
+    margin: 0 20px
+    
+}
+
+.navbar-link ul li:hover {
+    color:white;
+    text-decoration:overline;
+}
+
+.navbar a.Logo {
+    color: #21A1ED;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-style: italic;
+    font-weight:bolder;
+    font-size: large;
+}
+
+.navbar .navbar-link ul li.Home a{
+   color: #21A1ED;
+    
+}
+
+header{
+    background-color: white;
+}
+
+header h1.titre {
+    font-size: 100px;
+    color: #21A1ED;
+    background-color: blue;
+}
+
+header a.Contact-link{
+    font-weight: 700;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 5px;
+    border-color: black;
+    border-style:groove;
+    padding: 5px;
+    margin-left: 120px;
+    background-color: blueviolet;
+    
+}
+
+.presentation  {
+    margin-top: 150px;
+    background-color: azure;
+    font-size: small;
+    text-align: left;
+    width: 500px;
 }
