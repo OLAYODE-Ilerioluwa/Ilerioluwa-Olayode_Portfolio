@@ -1,82 +1,66 @@
-Portfolio — Ilerioluwa Olayode
-Bienvenue sur le dépôt de mon portfolio personnel. Ce site présente mon profil, mon parcours, mes projets ainsi que ma veille technologique.
+# Portfolio de Ilerioluwa Olayode
 
-🔗 Site en ligne : olayode-ilerioluwa.github.io/Ilerioluwa-Olayode_Portfolio
+Bienvenue sur le dépôt de mon portfolio personnel, un site qui présente mon profil, mon parcours, mes projets et ma veille technologique.
 
-À propos de moi
-Je suis étudiant en BTS Services Informatiques aux Organisations (SIO), option Solutions Logicielles et Applications Métiers (SLAM). Je développe également des sites web en freelance.
+🔗 Site en ligne : [olayode-ilerioluwa.github.io/Ilerioluwa-Olayode_Portfolio](https://olayode-ilerioluwa.github.io/Ilerioluwa-Olayode_Portfolio)
 
-Mon objectif professionnel est de devenir développeur Full Stack, afin de maîtriser aussi bien le développement front-end que le développement back-end. Je souhaite ensuite développer mes compétences en administration système, automatisation, déploiement et cloud pour être également capable d'occuper un rôle de DevOps.
+## À propos de moi
 
-À propos du portfolio
-Ce portfolio me permet de présenter :
+Je suis étudiant en BTS Services Informatiques aux Organisations (SIO), option Solutions Logicielles et Applications Métiers (SLAM), et je développe également des sites web en freelance. Mon objectif est de devenir développeur Full Stack, en maîtrisant aussi bien le front-end que le back-end, avant d'élargir mes compétences vers l'administration système, l'automatisation, le déploiement et le cloud pour évoluer ensuite vers un rôle DevOps.
 
-mon profil et mes compétences ;
-mon parcours scolaire et professionnel ;
-les projets que j'ai réalisés ;
-ma veille technologique ;
-mes moyens de contact.
-Le site est entièrement statique et ne nécessite aucun framework ni aucune étape de build.
+## À propos du portfolio
 
-Tous les éléments de ce portfolio sont codés à la main.
-Je n'utilise pas de CMS, de template préconçu ni de générateur de site. Cette démarche me permet de comprendre réellement le fonctionnement du HTML, du CSS et du JavaScript, de consolider mes bases et de progresser vers mon objectif de devenir développeur Full Stack puis DevOps.
-Technologies utilisées
-HTML5 : structure et contenu des pages ;
-CSS3 : mise en page, design et responsive design ;
-JavaScript : interactions et fonctionnalités dynamiques ;
-Git et GitHub : versionnement et hébergement du code ;
-GitHub Pages : déploiement du site en ligne.
-Structure du projet
-text
+Ce portfolio me permet de présenter mon profil et mes compétences, mon parcours scolaire et professionnel, les projets que j'ai réalisés, ma veille technologique, ainsi que mes moyens de contact. Le site est entièrement statique, sans framework ni étape de build.
 
+Tous les éléments sont codés à la main, sans CMS, sans template préconçu et sans générateur de site. Cette démarche me permet de vraiment comprendre le fonctionnement du HTML, du CSS et du JavaScript, de consolider mes bases, et d'avancer vers mon objectif de développeur Full Stack puis DevOps.
 
+## Technologies utilisées
+
+Le site repose sur HTML5 pour la structure et le contenu, CSS3 pour la mise en page et le responsive design, et JavaScript pour les interactions et les fonctionnalités dynamiques. Le code est versionné avec Git et hébergé sur GitHub, et le déploiement se fait via GitHub Pages.
+
+## Structure du projet
+
+```
 .
-├── index.html       # Page principale du portfolio
-├── index.css        # Styles du site
-├── README.md        # Présentation du projet
-└── Image/           # Logos, illustrations et autres images
-Sections du site
-Le portfolio est organisé autour des sections suivantes :
+├── index.html      # Page principale du portfolio
+├── index.css       # Styles du site
+├── README.md       # Présentation du projet
+└── Image/          # Logos, illustrations et autres images
+```
 
-Présentation
-Parcours
-Projets
-Veille technologique
-Contact
-Objectifs d'apprentissage
-Ce projet me permet notamment de travailler sur :
+## Sections du site
 
-la création d'une interface web en partant de zéro ;
-la structuration d'une page avec du HTML sémantique ;
-la conception d'un design responsive avec CSS ;
-l'ajout d'interactions avec JavaScript ;
-l'organisation et la maintenance d'un projet ;
-l'utilisation de Git et GitHub ;
-le déploiement continu d'un site avec GitHub Pages ;
-l'acquisition de bases solides pour évoluer vers le développement Full Stack et le DevOps.
-Ce portfolio est amené à évoluer progressivement avec l'ajout de nouveaux projets, de nouvelles compétences et de nouvelles technologies.
+Le portfolio s'organise en cinq sections : présentation, parcours, projets, veille technologique et contact.
 
-Installation locale
-Pour consulter ou modifier le projet sur votre ordinateur :
+## Objectifs d'apprentissage
 
-bash
+Ce projet me permet de travailler la création d'une interface web en partant de zéro, la structuration d'une page avec du HTML sémantique, la conception d'un design responsive avec CSS, l'ajout d'interactions avec JavaScript, ainsi que l'organisation et la maintenance d'un projet. Il me permet aussi de pratiquer Git et GitHub, et le déploiement continu via GitHub Pages, pour poser des bases solides en vue d'évoluer vers le Full Stack puis le DevOps.
 
+Ce portfolio est amené à évoluer progressivement, avec l'ajout de nouveaux projets, de nouvelles compétences et de nouvelles technologies.
 
+## Installation locale
+
+Pour consulter ou modifier le projet en local :
+
+```bash
 git clone https://github.com/olayode-ilerioluwa/Ilerioluwa-Olayode_Portfolio.git
 cd Ilerioluwa-Olayode_Portfolio
-Ouvrez ensuite le fichier index.html dans votre navigateur.
+```
 
-Aucune installation supplémentaire ni commande de build n'est nécessaire.
+Ouvrez ensuite le fichier index.html dans votre navigateur. Aucune installation ni commande de build n'est nécessaire.
 
-Contact
+## Contact
+
 LinkedIn : ileri-olayode
 E-mail scolaire : iolayode@lerebours.fr
 E-mail personnel : iolayode@outlook.fr
-Auteur
-Ilerioluwa Olayode
-Étudiant en BTS SIO option SLAM — Développeur web freelance
 
-Évolution du projet
-Ce projet est régulièrement mis à jour afin de refléter mon évolution, mes nouvelles réalisations et les compétences acquises au cours de ma formation et de mes expériences personnelles.
+## Auteur
+
+Ilerioluwa Olayode, étudiant en BTS SIO option SLAM et développeur web freelance.
+
+## Évolution du projet
+
+Ce projet est régulièrement mis à jour pour refléter mon évolution, mes nouvelles réalisations et les compétences acquises au fil de ma formation et de mes expériences personnelles.
 
 ⭐ N'hésitez pas à consulter le site et à suivre l'évolution du projet sur GitHub.
