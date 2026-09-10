@@ -1,82 +1,74 @@
 body{
-    font-family: "Kanit";
+    font-family: 'Google Sans';
 }
 
-.navbar{
-    position: flex;
-    padding: 10px;
-    display:flex;
-    justify-content: space-between;
+
+img{
+    height: 100px;
+    width: 100px;
+    
+}
+
+.navbar {
+    display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 999px;
+  padding: 0.35rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+    
+    
+}
+
+nav .Logo {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #f9fafb;
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  letter-spacing: 10px;
+  flex-shrink: 0;
+}
+
+.navbar-link {
     width: 100%;
-    box-sizing: border-box;
-    background-color: rgb(181, 174, 174);
-    
-}
-
-.navbar a {
-    text-decoration: none;
-    color: inherit;
-    
+  height: 200%;
+  background: rgba(255,255,255,0.15);
+  flex-shrink: 0;
 }
 
 .navbar-link ul{
     display: flex;
-    
+  list-style: none;
+  gap: 0.25rem;
 }
 
-.navbar-link ul li{
-    display: flex;
-    margin: 0 20px
-    
+.navbar-link ul li a {
+    display: block;
+  color: #000000;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 999px;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
 }
 
-.navbar-link ul li:hover {
-    color:white;
-    text-decoration:overline;
+.navbar-link ul li a:hover {
+    color: #489ff5;
+  background:rgba(255,255,255,0.1);
 }
 
-.navbar a.Logo {
-    color: #21A1ED;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    font-style: italic;
-    font-weight:bolder;
-    font-size: large;
+.navbar-link ul li a.Home {
+    background: #ffffff;
+  color: #111827;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
 }
 
-.navbar .navbar-link ul li.Home a{
-   color: #21A1ED;
-    
-}
 
-header{
-    background-color: white;
-}
 
-header h1.titre {
-    font-size: 100px;
-    color: #21A1ED;
-    background-color: blue;
-}
-
-header a.Contact-link{
-    font-weight: 700;
-    text-decoration: none;
-    color: inherit;
-    border-radius: 5px;
-    border-color: black;
-    border-style:groove;
-    padding: 5px;
-    margin-left: 120px;
-    background-color: blueviolet;
-    
-}
-
-.presentation  {
-    margin-top: 150px;
-    background-color: azure;
-    font-size: small;
-    text-align: left;
-    width: 500px;
-}
