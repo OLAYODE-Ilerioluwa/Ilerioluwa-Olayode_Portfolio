@@ -1,0 +1,39 @@
+type Client @table {
+  name: String!
+  email: String!
+  companyName: String!
+  phoneNumber: String
+  websiteUrl: String
+}
+
+type Project @table {
+  title: String!
+  status: String!
+  budget: Float!
+  startDate: Date
+  deadline: Date
+  client: Client
+}
+
+type Milestone @table {
+  title: String!
+  description: String!
+  status: String!
+  dueDate: Date
+  project: Project
+}
+
+type Lead @table {
+  contactName: String!
+  projectBrief: String!
+  status: String!
+  budgetEstimate: Float
+  referralSource: String
+}
+
+type Asset @table {
+  type: String!
+  url: String!
+  description: String
+  project: Project
+}

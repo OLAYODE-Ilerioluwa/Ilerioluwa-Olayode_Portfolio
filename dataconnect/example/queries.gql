@@ -1,0 +1,36 @@
+mutation CreateData @transaction {
+  client_insert(data: {name: "Tech Corp", email: "contact@techcorp.com", companyName: "Tech Corp"})
+  project_insert(data: {title: "Website Redesign", status: "Active", budget: 5000})
+  lead_insert(data: {contactName: "John Doe", projectBrief: "Build an e-commerce site", status: "New"})
+  milestone_insert(data: {title: "Alpha Release", description: "First deployment", status: "Pending"})
+  asset_insert(data: {type: "Image", url: "https://example.com/logo.png", description: "Company Logo"})
+}
+
+mutation UpdateData @transaction {
+  client_update(id: "550e8400-e29b-41d4-a716-446655440000", data: {phoneNumber: "555-0101"})
+  project_update(id: "550e8400-e29b-41d4-a716-446655440001", data: {status: "Completed"})
+  lead_update(id: "550e8400-e29b-41d4-a716-446655440002", data: {status: "Qualified"})
+  milestone_update(id: "550e8400-e29b-41d4-a716-446655440003", data: {status: "Completed"})
+  asset_update(id: "550e8400-e29b-41d4-a716-446655440004", data: {description: "Updated Logo"})
+}
+
+mutation DeleteData @transaction {
+  client_delete(id: "550e8400-e29b-41d4-a716-446655440000")
+  project_delete(id: "550e8400-e29b-41d4-a716-446655440001")
+  lead_delete(id: "550e8400-e29b-41d4-a716-446655440002")
+  milestone_delete(id: "550e8400-e29b-41d4-a716-446655440003")
+  asset_delete(id: "550e8400-e29b-41d4-a716-446655440004")
+}
+
+query ReadData @auth(level: PUBLIC, insecureReason: "These are public business records.") {
+  client(id: "550e8400-e29b-41d4-a716-446655440000") { name email }
+  project(id: "550e8400-e29b-41d4-a716-446655440001") { title budget }
+  lead(id: "550e8400-e29b-41d4-a716-446655440002") { contactName projectBrief }
+  milestone(id: "550e8400-e29b-41d4-a716-446655440003") { title dueDate }
+  asset(id: "550e8400-e29b-41d4-a716-446655440004") { url type }
+  clients { name }
+  projects { title }
+  leads { contactName }
+  milestones { title }
+  assets { url }
+}
