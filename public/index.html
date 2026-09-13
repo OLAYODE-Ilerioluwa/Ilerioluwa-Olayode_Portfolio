@@ -146,20 +146,39 @@
     </section>
 
     <section id="Veille">
-        <h1> Veille technologique </h1>
-
-        <p> En cours </p>
-
+        <h1>Veille technologique</h1>
+        <p>En cours</p>
     </section>
 
     <section id="Contact">
-        <h1> Contact </h1>
+        <h1>Contact</h1>
 
-        <a href="tel:+33633231591"> 06 33 23 15 91 <br></a>
-        <a href="https://www.linkedin.com/in/ileri-olayode"> Linkedin</a>
-        <a href="mailto:iolayode.outlook.fr"> iolayode@outlook.fr</a>
+        <form class="contact-form" action="https://formspree.io/f/TON_ID_FORMSPREE" method="POST">
+            <input type="text" name="nom" placeholder="Votre nom" required>
+            <input type="email" name="email" placeholder="Votre email" required>
+            <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
 
+        <div class="contact-card">
+            <a href="tel:+33633231591" class="contact-link-item">06 33 23 15 91</a>
+            <a href="https://www.linkedin.com/in/ileri-olayode" class="contact-link-item">LinkedIn</a>
+            <a href="mailto:iolayode@outlook.fr" class="contact-link-item">iolayode@outlook.fr</a>
+        </div>
     </section>
+
+    <footer class="site-footer">
+        <p class="footer-copy">© 2026 Ilerioluwa Olayode. Tous droits réservés.</p>
+        <div class="footer-brand">
+            <img src="Image/mascotte-footer.png" alt="Mascotte" class="footer-mascotte">
+            <span>Ileri Olayode</span>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/ileri-olayode">LinkedIn</a>
+            <a href="https://github.com/OLAYODE-Ilerioluwa">GitHub</a>
+            <a href="#Contact">Contact</a>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
