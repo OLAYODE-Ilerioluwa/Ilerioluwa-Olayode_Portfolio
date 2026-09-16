@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Button?>
+
+<VBox spacing="12"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="sio.realisationslam.HelloController"
+      style="-fx-background-color: #f5f5f5; -fx-padding: 20px;">
+
+  <!-- HEADER TITRE -->
+  <HBox alignment="CENTER">
+    <Label text="⚔ Donjons &amp; Dragons"
+           style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #222222;"/>
+  </HBox>
+
+  <!-- SEPARATEUR -->
+  <Region style="-fx-background-color: #dddddd; -fx-pref-height: 1px;"/>
+
+  <!-- INFOS HERO ET ENNEMI -->
+  <HBox spacing="20" alignment="CENTER">
+
+    <!-- HERO -->
+    <VBox spacing="6" alignment="CENTER"
+          style="-fx-background-color: white; -fx-border-color: #dddddd; -fx-border-radius: 6px; -fx-background-radius: 6px; -fx-padding: 14px; -fx-pref-width: 200px;">
+      <Label text="HÉROS"
+             style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #888888;"/>
+      <Region style="-fx-background-color: #eeeeee; -fx-pref-height: 1px;"/>
+      <Label fx:id="heroNom" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #222222;"/>
+      <Label fx:id="heroPv" style="-fx-font-size: 12px; -fx-text-fill: #e74c3c;"/>
+      <Label fx:id="heroMana" style="-fx-font-size: 12px; -fx-text-fill: #3498db;"/>
+      <Label fx:id="heroAttaque" style="-fx-font-size: 12px; -fx-text-fill: #e67e22;"/>
+      <Label fx:id="heroDefense" style="-fx-font-size: 12px; -fx-text-fill: #27ae60;"/>
+      <Label fx:id="heroNiveau" style="-fx-font-size: 12px; -fx-text-fill: #8e44ad;"/>
+      <Label fx:id="bouclierLabel" style="-fx-font-size: 12px; -fx-text-fill: #16a085;"/>
+    </VBox>
+
+    <!-- TOUR -->
+    <VBox alignment="CENTER" spacing="4">
+      <Label text="VS"
+             style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #cccccc;"/>
+      <Label fx:id="tourLabel"
+             style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #888888;"/>
+    </VBox>
+
+    <!-- ENNEMI -->
+    <VBox spacing="6" alignment="CENTER"
+          style="-fx-background-color: white; -fx-border-color: #dddddd; -fx-border-radius: 6px; -fx-background-radius: 6px; -fx-padding: 14px; -fx-pref-width: 200px;">
+      <Label text="ENNEMI"
+             style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #888888;"/>
+      <Region style="-fx-background-color: #eeeeee; -fx-pref-height: 1px;"/>
+      <Label fx:id="ennemiNom" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #222222;"/>
+      <Label fx:id="ennemiPv" style="-fx-font-size: 12px; -fx-text-fill: #e74c3c;"/>
+    </VBox>
+
+  </HBox>
+
+  <!-- SEPARATEUR -->
+  <Region style="-fx-background-color: #dddddd; -fx-pref-height: 1px;"/>
+
+  <!-- LOG DE COMBAT -->
+  <TextArea fx:id="logCombat" editable="false" prefHeight="160"
+            style="-fx-background-color: white; -fx-border-color: #dddddd; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-font-size: 12px; -fx-text-fill: #333333;"/>
+
+  <!-- SEPARATEUR -->
+  <Region style="-fx-background-color: #dddddd; -fx-pref-height: 1px;"/>
+
+  <!-- BOUTONS D'ACTION PRINCIPAUX -->
+  <HBox fx:id="boutonsAction" spacing="8" alignment="CENTER">
+    <Button text="⚔  Attaquer" onAction="#attaquer"
+            style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-size: 12px; -fx-pref-width: 110px; -fx-pref-height: 36px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-cursor: hand;"/>
+    <Button text="🛡  Défense" onAction="#defendre"
+            style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-size: 12px; -fx-pref-width: 110px; -fx-pref-height: 36px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-cursor: hand;"/>
+    <Button text="🧪  Potion" onAction="#utiliserPotion"
+            style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-size: 12px; -fx-pref-width: 110px; -fx-pref-height: 36px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-cursor: hand;"/>
+    <Button text="🔍  Analyser" onAction="#analyser"
+            style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-size: 12px; -fx-pref-width: 110px; -fx-pref-height: 36px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-cursor: hand;"/>
+  </HBox>
+
+  <!-- BOUTONS ATTAQUES -->
+  <HBox fx:id="boutonsAttaque" spacing="8" alignment="CENTER" visible="false">
+    <Button fx:id="btnAttaque1" onAction="#choisirAttaque1"
+            style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-size: 11px; -fx-pref-width: 140px; -fx-pref-height: 32px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-cursor: hand;"/>
+    <Button fx:id="btnAttaque2" onAction="#choisirAttaque2" disable="true"
+            style="-fx-background-color: #cccccc; -fx-text-fill: #888888; -fx-font-size: 11px; -fx-pref-width: 140px; -fx-pref-height: 32px; -fx-border-radius: 4px; -fx-background-radius: 4px;"/>
+    <Button fx:id="btnAttaque3" onAction="#choisirAttaque3" disable="true"
+            style="-fx-background-color: #cccccc; -fx-text-fill: #888888; -fx-font-size: 11px; -fx-pref-width: 140px; -fx-pref-height: 32px; -fx-border-radius: 4px; -fx-background-radius: 4px;"/>
+  </HBox>
+
+  <!-- BOUTONS DEFENSE -->
+  <HBox fx:id="boutonsDefense" spacing="8" alignment="CENTER" visible="false">
+    <Button fx:id="btnDefense1" text="🛡 Défense Passive" onAction="#choisirDefense1"
+            style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 11px; -fx-pref-width: 150px; -fx-pref-height: 32px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-cursor: hand;"/>
+    <Button fx:id="btnDefense2" text="⚔ Défense Active" onAction="#choisirDefense2" disable="true"
+            style="-fx-background-color: #cccccc; -fx-text-fill: #888888; -fx-font-size: 11px; -fx-pref-width: 150px; -fx-pref-height: 32px; -fx-border-radius: 4px; -fx-background-radius: 4px;"/>
+    <Button fx:id="btnDefense3" text="✨ Défense Magique" onAction="#choisirDefense3" disable="true"
+            style="-fx-background-color: #cccccc; -fx-text-fill: #888888; -fx-font-size: 11px; -fx-pref-width: 150px; -fx-pref-height: 32px; -fx-border-radius: 4px; -fx-background-radius: 4px;"/>
+  </HBox>
+
+  <!-- BOUTONS POTION -->
+  <HBox fx:id="boutonsPotion" spacing="8" alignment="CENTER" visible="false">
+    <Button fx:id="btnPotion1" text="🧪 Soin" onAction="#choisirPotion1"
+            style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 11px; -fx-pref-width: 140px; -fx-pref-height: 32px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-cursor: hand;"/>
+    <Button fx:id="btnPotion2" text="⚔ Attaque" onAction="#choisirPotion2"
+            style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-size: 11px; -fx-pref-width: 140px; -fx-pref-height: 32px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-cursor: hand;"/>
+    <Button fx:id="btnPotion3" text="🛡 Défense" onAction="#choisirPotion3"
+            style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 11px; -fx-pref-width: 140px; -fx-pref-height: 32px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-cursor: hand;"/>
+  </HBox>
+
+</VBox>
