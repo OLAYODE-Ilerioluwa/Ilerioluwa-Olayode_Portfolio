@@ -54,7 +54,9 @@ export const NavBar = () =>{
 
                 {/*mobile nav*/}
 
-                <button onClick={() => setIsMenuOpen((prev) => !prev)} className="md:hidden z-50 p-2 text-foreground focus:outline-none">{isMenuOpen ? <X size={24} /> : <Menu size={24}/>} </button>
+                <button onClick={() => setIsMenuOpen((prev) => !prev)} 
+                    className="md:hidden z-60 relative p-2 text-foreground "
+                    aria-label={isMenuOpen ? "Close Menu" : "Open Menu"} >{isMenuOpen ? <X size={24} /> : <Menu size={24}/>} </button>
 
                 <div className={cn(
                     "fixed inset-0 bg-background/95 backdrop-blur-md z-50 flex flex-col items-center justify-center",

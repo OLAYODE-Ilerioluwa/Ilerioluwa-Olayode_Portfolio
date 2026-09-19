@@ -1,6 +1,7 @@
 import { ThemeToggle } from "../compenents/ThemeToggle.jsx";
 import { AuroraBackground } from "../compenents/AuroraBackground.jsx";
 import { NavBar } from "../compenents/NavBar.jsx";
+import {HeroSection} from "../compenents/HeroSection.jsx";
 
 export const Home = () => {
   return (
@@ -14,7 +15,9 @@ export const Home = () => {
         {/*Navigation*/}
         <NavBar />
         {/*Main content*/}
-
+        <main>
+          <HeroSection/>
+        </main>
         {/*Footer*/}
       </div>
     </AuroraBackground>
