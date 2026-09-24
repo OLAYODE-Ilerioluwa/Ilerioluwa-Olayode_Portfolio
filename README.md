@@ -2,7 +2,7 @@
 
 Bienvenue sur le dépôt de mon portfolio personnel, un site qui présente mon profil, mon parcours, mes projets et ma veille technologique.
 
-🔗 Site en ligne : [[Portfolio Ilerioluwa Olayode](https://portfolio-io-3f0b6.web.app/)]
+🔗 Site en ligne : [[Portfolio Ilerioluwa Olayode](https://siteportfolio-dun.vercel.app/)]
 
 ## À propos de moi
 
