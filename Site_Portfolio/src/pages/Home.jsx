@@ -7,6 +7,7 @@ import { Skills } from "../compenents/Skills.jsx";
 import { Projets } from "../compenents/Projets.jsx";
 import { Contact } from "../compenents/Contact.jsx";
 import { Footer} from "../compenents/Footer.jsx"
+import { Parcours } from "../compenents/Parcours.jsx";
 
 export const Home = () => {
   return (
@@ -23,6 +24,7 @@ export const Home = () => {
         <main>
           <HeroSection/>
           <AboutMe/>
+          <Parcours/>
           <Skills/>
           <Projets/>
           <Contact/>
