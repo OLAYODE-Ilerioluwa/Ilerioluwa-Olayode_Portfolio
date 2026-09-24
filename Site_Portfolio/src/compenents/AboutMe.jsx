@@ -17,14 +17,14 @@ export const AboutMe = () => {
                             <h3 className="text-2xl font-semibold"> Un jeune developpeur passionné de programmation </h3>
 
                             <p className="text-muted-foreground">
-                                Grâce à mes deux ans en BTS SIO, j'ai pus prendre conscience de ce que je voulais réaliser.
-                                J'ai pus me spécialiser dans la création de site ou d'applications , où j'ai pus apprendre differents langages comme HTML/CSS, JavaScript, Java, React ou bien même PHP.
-                                Je réalise des sites responsives, accessible et des applications web performant en utilisant des technologies modern. 
-                                J'ai ouvert mon auto-entreprise apres ma premiere année pour mettre en pratique ce que j'ai appris, me lancer en un defi mais aussi pour gagner en experience.
+                                Grâce à mes deux ans en BTS SIO, j'ai pu prendre conscience de ce que je voulais réaliser.
+                                J'ai pu me spécialiser dans la création de sites ou d'applications, ce qui m'a permis d'apprendre différents langages comme HTML/CSS, JavaScript, Java, React ou encore PHP.
+                                Je réalise des sites responsifs, accessibles et des applications web performantes en utilisant des technologies modernes.
+                                J'ai créé mon auto-entreprise après ma première année pour mettre en pratique ce que j'ai appris, me lancer un défi, mais aussi pour gagner en expérience.
                             </p>
 
                             <p className="text-muted-foreground">
-                                Si vous avez des stages, idées de projet ou meme un site que vous souhaitiez réaliser je suis présent à n'importe quel moment.
+                                Si vous avez des opportunités de stage, des idées de projets ou même un site que vous souhaitez réaliser, je suis à votre disposition.
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">

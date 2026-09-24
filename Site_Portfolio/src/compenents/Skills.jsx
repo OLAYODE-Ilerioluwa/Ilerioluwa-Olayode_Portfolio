@@ -1,28 +1,29 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
+
 const skills = [
 
     // Frontend
-    {name: "HTML/CSS", level: 95, category: "frontend"},
-    {name: "JavaScript", level: 70, category: "frontend"},
-    {name: "React", level: 90, category: "frontend"},
-    {name: "Next.js", level: 85, category: "frontend"},
-    {name: "Tailwind CSS", level: 80, category: "frontend"},
+    {name: "HTML/CSS", level: 95, category: "frontend", level_text: "Efficace"},
+    {name: "JavaScript", level: 70, category: "frontend", level_text: "Débutant Avancé"},
+    {name: "React", level: 90, category: "frontend", level_text: "Débutant Avancé"},
+    {name: "Next.js", level: 85, category: "frontend", level_text: "Débutant Avancé"},
+    {name: "Tailwind CSS", level: 80, category: "frontend", level_text: "Débutant Anvancé"},
 
     // Backend
-    {name: "Java", level: 85, category: "backend"},
-    {name: "PHP", level: 70, category: "backend"},
-    {name: "Python", level: 95, category: "backend"},
-    {name: "SQL", level: 75, category: "backend"},
-    {name: "JavaScript", level: 70, category: "backend"},
+    {name: "Java", level: 85, category: "backend", level_text: "Compétent"},
+    {name: "PHP", level: 70, category: "backend", level_text: "Débutant Avancé"},
+    {name: "Python", level: 95, category: "backend", level_text: "Efficace"},
+    {name: "SQL", level: 75, category: "backend", level_text: "Compétent"},
+    {name: "JavaScript", level: 70, category: "backend", level_text: "Débutant Avancé"},
 
     // Tools
-    {name: "Git/GitHub", level: 95, category: "tools"},
-    {name: "Docker", level: 70, category: "tools"},
-    {name: "Figma", level: 70, category: "tools"},
-    {name: "VS Code", level: 85, category: "tools"},
-    {name: "IntelliJ", level: 80, category: "toolsd"},
+    {name: "Git/GitHub", level: 95, category: "tools", level_text: "Efficace"},
+    {name: "Docker", level: 70, category: "tools", level_text: "Compétent"},
+    {name: "Figma", level: 70, category: "tools", level_text: "Débutant Avancé"},
+    {name: "VS Code", level: 85, category: "tools", level_text: "Efficace"},
+    {name: "IntelliJ", level: 80, category: "toolsd", level_text: "Comptétent"},
 
 ]
 
@@ -70,7 +71,7 @@ export const Skills = () => {
                                 /> 
                             </div>
                             <div className="text-right mt-1">
-                                <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                                <span className="text-sm text-muted-foreground">{skill.level_text}</span>
                             </div>
 
                         </div>
