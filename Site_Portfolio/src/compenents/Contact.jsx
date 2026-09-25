@@ -11,20 +11,40 @@ export const Contact = () =>{
     const { toast} = useToast();
     const[isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async(e) =>{
         e.preventDefault();
-
         setIsSubmitting(true);
+        const formData = new FormData(e.target);
 
-        setTimeout(() =>{
-            toast({
-                title:"Message envoyé!",
-                description: "Merci pour votre message.Je vous contacte au plus vite",
+        try {
+                const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    firstName: formData.get("firstName"),
+                    lastName: formData.get("lastName"),
+                    email: formData.get("email"),
+                    message: formData.get("message"),
+                }),
             });
-            setIsSubmitting(false);
-        },1500);
-        
+            if (!response.ok) throw new Error("Échec de l'envoi");
+
+            toast({
+                title: "Message envoyé!",
+                description: "Merci pour votre message. Je vous contacte au plus vite",
+            });
+            e.target.reset();
+        } catch (error) {
+        toast({
+            title: "Erreur",
+            description: "Le message n'a pas pu être envoyé, réessayez plus tard.",
+        });
+    } finally {
+        setIsSubmitting(false);
     }
+        
+        
+ };
     return ( 
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
         <div className="container mx-auto max-w-5xl">
@@ -97,20 +117,19 @@ export const Contact = () =>{
 
                 </div>
 
-                <div className="bg-card p-8 rounded-lg shadow-xs"
-                    onSubmit={handleSubmit}>
+                <div className="bg-card p-8 rounded-lg shadow-xs">
                     <h3 className="text-2xl font-semibold mb-6">Envoyez moi un message</h3>
 
-                    <form action="" className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
-                            <label htmlFor="name" className="block text-sm font-medium mb-2"> Prenom </label>
-                            <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-md border border-input  bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary"
+                            <label htmlFor="firstName" className="block text-sm font-medium mb-2"> Prenom </label>
+                            <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary"
                             placeholder="Votre prenom..." 
                             />
                         </div>
                         <div>
-                            <label htmlFor="name" className="block text-sm font-medium mb-2"> Nom </label>
-                            <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-md border border-input  bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary"
+                            <label htmlFor="lastName" className="block text-sm font-medium mb-2"> Nom </label>
+                            <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary"
                             placeholder="Votre nom..." 
                             />
                         </div>
