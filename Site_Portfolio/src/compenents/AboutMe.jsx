@@ -8,18 +8,18 @@ export const AboutMe = () => {
                 {" "}
                 <div className="container mx-auto max-w-5xl">
                     <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                        About <span className="text-primary">Me</span>
+                        À propos de <span className="text-primary">moi</span>
                     </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
 
-                            <h3 className="text-2xl font-semibold"> Un jeune developpeur passionné de programmation </h3>
+                            <h3 className="text-2xl font-semibold"> Un jeune développeur passionné par la programmation </h3>
 
                             <p className="text-muted-foreground">
-                                Grâce à mes deux ans en BTS SIO, j'ai pu prendre conscience de ce que je voulais réaliser.
-                                J'ai pu me spécialiser dans la création de sites ou d'applications, ce qui m'a permis d'apprendre différents langages comme HTML/CSS, JavaScript, Java, React ou encore PHP.
-                                Je réalise des sites responsifs, accessibles et des applications web performantes en utilisant des technologies modernes.
+                                Grâce à mes deux années en BTS SIO, j'ai pu prendre conscience de ce que je voulais réaliser. 
+                                J'ai pu me spécialiser dans la création de sites et d'applications, ce qui m'a permis d'apprendre différents langages comme HTML/CSS, JavaScript, Java, React ou encore PHP. 
+                                Je réalise des sites responsifs, accessibles et des applications web performantes en utilisant des technologies modernes. 
                                 J'ai créé mon auto-entreprise après ma première année pour mettre en pratique ce que j'ai appris, me lancer un défi, mais aussi pour gagner en expérience.
                             </p>
 
@@ -34,7 +34,7 @@ export const AboutMe = () => {
                                 </a>
 
                                 <a href="/cv.pdf" download="CV_Ilerioluwa_Olayode.pdf" className="px-6 py-2 rounded-full border-primary hover:bg-primary/10 transition-colors duration-300">
-                                    Telecharger mon CV
+                                    Télécharger mon CV
                                 </a>
 
 
@@ -48,10 +48,10 @@ export const AboutMe = () => {
                                         <Code className="h-6 w-6 text-primary"/>
                                     </div>
                                     <div className="text-left">
-                                        <h4 className="font-semibold text-lg"> Developpement web </h4>
+                                        <h4 className="font-semibold text-lg"> Développement web </h4>
 
                                         <p className="text-muted-foreground">
-                                            Création d'un site responsives et d'application web avec des frameworks moderne.
+                                            Création de sites responsifs et d'applications web avec des frameworks modernes.
                                         </p>
 
                                     </div>
@@ -78,7 +78,7 @@ export const AboutMe = () => {
                                         <Briefcase className="h-6 w-6 text-primary"/>
                                     </div>
                                     <div className="text-left">
-                                        <h4 className="font-semibold text-lg"> Services Freelance </h4>
+                                        <h4 className="font-semibold text-lg"> Services freelance </h4>
 
                                         <p className="text-muted-foreground">
                                             Conception et réalisation de projets web pour particuliers et entreprises via mon auto-entreprise.

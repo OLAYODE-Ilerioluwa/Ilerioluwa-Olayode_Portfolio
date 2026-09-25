@@ -7,19 +7,18 @@ export const HeroSection = () => {
             <div className="space-y-6">
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
                     <span className="opacity-0 animate-fade-in">Bonjour !</span>
-                    <span className="text-gradient opacity-0 animate-fade-in-delay-1"> {" "}Je me presente , je m'appelle </span>
+                    <span className="text-gradient opacity-0 animate-fade-in-delay-1"> {" "}Je me présente, je m'appelle </span>
                     <span className="text-primary ml-2 opacity-0 animate-fade-in-delay-2">{" "}Ilerioluwa Olayode</span>
                 </h1>
 
                 <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-                    Je suis étudiant en BTS SIO 2éme année, je suis passionné d'informatique.
-                    En recherche de stage pour cloturer mon année, je suis aussi en quête de nouveau defi comme 
-                    la création d'un jeu ou même de créer des sites pour des clients.
+                    Je suis étudiant en BTS SIO 2e année et je suis passionné par l'informatique. 
+                    En recherche de stage pour clôturer mon année, je suis aussi en quête de nouveaux défis, comme la création d'un jeu ou la réalisation de sites pour des clients.
                 </p>
 
                 <div className="opacity-0 animate-fade-in-delay-4">
                     <a href="#projets" className="cosmic-button">
-                        Observer mes projets
+                        Découvrez mes projets
                     </a>
                 </div>
             </div>

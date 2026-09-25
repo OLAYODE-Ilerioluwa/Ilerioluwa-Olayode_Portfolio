@@ -1,29 +1,43 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-
+import { FaHtml5 } from "react-icons/fa";
+import { FaJava } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io5";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { SiNextdotjs } from "react-icons/si";
+import { FaPhp } from "react-icons/fa";
+import { FaPython } from "react-icons/fa";
+import { TbSql } from "react-icons/tb";
+import { FaGithub } from "react-icons/fa";
+import { FaDocker } from "react-icons/fa";
+import { FaFigma } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
+import { VscCode } from "react-icons/vsc";
+import { SiIntellijidea } from "react-icons/si";
+import { SiSpringboot } from "react-icons/si";
 
 const skills = [
 
     // Frontend
-    {name: "HTML/CSS", level: 95, category: "frontend", level_text: "Efficace"},
-    {name: "JavaScript", level: 70, category: "frontend", level_text: "Débutant Avancé"},
-    {name: "React", level: 90, category: "frontend", level_text: "Débutant Avancé"},
-    {name: "Next.js", level: 85, category: "frontend", level_text: "Débutant Avancé"},
-    {name: "Tailwind CSS", level: 80, category: "frontend", level_text: "Débutant Anvancé"},
+    {name: "HTML/CSS",  category: "frontend",logo:FaHtml5, level_text: "Efficace"},
+    {name: "JavaScript",  category: "frontend",logo:IoLogoJavascript, level_text: "Débutant Avancé"},
+    {name: "React",  category: "frontend",logo:FaReact, level_text: "Débutant Avancé"},
+    {name: "Next.js",  category: "frontend",logo:SiNextdotjs, level_text: "Débutant Avancé"},
+    {name: "Tailwind CSS",  category: "frontend",logo:RiTailwindCssFill, level_text: "Débutant Anvancé"},
 
     // Backend
-    {name: "Java", level: 85, category: "backend", level_text: "Compétent"},
-    {name: "PHP", level: 70, category: "backend", level_text: "Débutant Avancé"},
-    {name: "Python", level: 95, category: "backend", level_text: "Efficace"},
-    {name: "SQL", level: 75, category: "backend", level_text: "Compétent"},
-    {name: "JavaScript", level: 70, category: "backend", level_text: "Débutant Avancé"},
+    {name: "Java", level: 85, category: "backend",logo:FaJava, level_text: "Compétent"},
+    {name: "PHP", level: 70, category: "backend",logo:FaPhp, level_text: "Débutant Avancé"},
+    {name: "Python", level: 95, category: "backend",logo:FaPython, level_text: "Efficace"},
+    {name: "SQL", level: 75, category: "backend",logo:TbSql, level_text: "Compétent"},
+    {name: "SpringBoot", level: 70, category: "backend",logo:SiSpringboot, level_text: "Débutant Avancé"},
 
     // Tools
-    {name: "Git/GitHub", level: 95, category: "tools", level_text: "Efficace"},
-    {name: "Docker", level: 70, category: "tools", level_text: "Compétent"},
-    {name: "Figma", level: 70, category: "tools", level_text: "Débutant Avancé"},
-    {name: "VS Code", level: 85, category: "tools", level_text: "Efficace"},
-    {name: "IntelliJ", level: 80, category: "toolsd", level_text: "Comptétent"},
+    {name: "Git/GitHub", level: 95, category: "tools",logo:FaGithub, level_text: "Efficace"},
+    {name: "Docker", level: 70, category: "tools",logo:FaDocker, level_text: "Compétent"},
+    {name: "Figma", level: 70, category: "tools",logo:FaFigma, level_text: "Débutant Avancé"},
+    {name: "VS Code", level: 85, category: "tools",logo:VscCode, level_text: "Efficace"},
+    {name: "IntelliJ", level: 80, category: "toolsd",logo:SiIntellijidea, level_text: "Comptétent"},
 
 ]
 
@@ -64,11 +78,9 @@ export const Skills = () => {
                              <div className="text-left mb-4">
                                 <h3 className="font-semibold text-lg">{skill.name}</h3>
                             </div>   
-                            <div className="w-full bg-secondary/50 h-2 rounded-full oveflow-hidden ">
-                                <div className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
-                                style={{width: skill.level + "%"}}
-                                
-                                /> 
+                            
+                            <div className="flex justify-center">
+                                <skill.logo size={50}/>
                             </div>
                             <div className="text-right mt-1">
                                 <span className="text-sm text-muted-foreground">{skill.level_text}</span>
