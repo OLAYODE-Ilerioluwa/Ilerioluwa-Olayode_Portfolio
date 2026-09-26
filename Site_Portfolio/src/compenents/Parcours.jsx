@@ -41,7 +41,7 @@ export const Parcours = () =>{
 
                 <div className="flex flex-col items-start gap-5 " >
                     {parcours.map((parcour) => (
-                        <div key={parcour.id} style={{backgroundColor: "#ffffff"}} className="relative z-10 p-6 rounded-lg shadow-xs w-full">
+                        <div key={parcour.id}  className="relative z-10 p-6 rounded-lg shadow-xs w-full">
                             <div className="text-left px-3 py-2">
                                 <span className="text-xl font-semibold flex items-center gap-x-5 text-primary"><IoIosArrowDroprightCircle size={20} />{parcour.title}</span>
                             </div>
