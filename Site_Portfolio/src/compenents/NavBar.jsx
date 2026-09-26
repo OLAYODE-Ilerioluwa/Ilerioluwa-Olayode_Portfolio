@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { X, Menu } from "lucide-react";
 import { cn } from "../lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
+import { Link } from "react-router-dom";
+
+
 
 const navItems = [
   { name: "Accueil", href: "#accueil" },
@@ -37,24 +40,24 @@ export const NavBar = () => {
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
-          <a
-            href="#accueil"
+          <Link
+            to="/#accueil"
             className="text-xl font-bold text-primary flex items-center relative z-50"
           >
             <span className="text-glow text-foreground">Studio</span>{" "}
             <span className="ml-1">NVXL</span>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item, key) => (
-              <a
+              <Link
                 key={key}
-                href={item.href}
+                to={`/${item.href}`}
                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             <ThemeToggle />
           </div>
@@ -84,14 +87,14 @@ export const NavBar = () => {
         )}
       >
         {navItems.map((item, key) => (
-          <a
+          <Link
             key={key}
-            href={item.href}
+            to={`/${item.href}`}
             className="text-foreground/80 hover:text-primary transition-colors duration-300"
             onClick={() => setIsMenuOpen(false)}
           >
             {item.name}
-          </a>
+          </Link>
         ))}
       </div>
     </>

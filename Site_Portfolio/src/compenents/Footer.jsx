@@ -1,4 +1,5 @@
 import { ArrowUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
 
@@ -12,6 +13,13 @@ export const Footer = () => {
         <a href="#accueil" className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"> 
             <ArrowUp />
         </a>
+
+        <Link
+            to="/mentions-legales"
+            className="text-sm text-foreground/60 hover:text-primary transition-colors duration-300"
+        >
+            Mentions légales
+        </Link>
     
     </footer>
     );
