@@ -65,12 +65,20 @@ const projets = [
         id:7,
         title : "Hell of tower - RPG ",
         description: "Réalisation d'un jeu en JAVA/JAVAFX",
-        image:"/Projets/TOH.png",
+        image:"/Projets/slimev1.png",
         tags: ["Java/JavaFx"],
         demoUrl:"#",
         githubUrl:"https://github.com/OLAYODE-Ilerioluwa/Ilerioluwa-Olayode_Portfolio/tree/main/EXERCICE-SOW",
+    },
+    {
+        id:8,
+        title : " Projet Neurolink ",
+        description: "Réalisation d'une application web",
+        image:"/Projets/NeuroLink.png",
+        tags: ["PHP", "Symphony"," Java", "JavaFx"],
+        demoUrl:"#",
+        githubUrl:"https://github.com/OLAYODE-Ilerioluwa/Ilerioluwa-Olayode_Portfolio/tree/main/EXERCICE-SOW",
     }
-
 ]
 
 export const Projets = () => {
