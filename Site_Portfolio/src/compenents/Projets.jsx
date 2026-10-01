@@ -75,7 +75,7 @@ const projets = [
         title : " Projet Neurolink ",
         description: "Réalisation d'une application web",
         image:"/Projets/NeuroLink.png",
-        tags: ["PHP", "Symphony"," Java", "JavaFx"],
+        tags: ["PHP", "Symfony"," Java", "JavaFx"],
         demoUrl:"#",
         githubUrl:"https://github.com/OLAYODE-Ilerioluwa/Ilerioluwa-Olayode_Portfolio/tree/main/EXERCICE-SOW",
     }

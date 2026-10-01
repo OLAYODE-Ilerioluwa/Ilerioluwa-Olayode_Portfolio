@@ -15,6 +15,7 @@ import { FaReact } from "react-icons/fa";
 import { VscCode } from "react-icons/vsc";
 import { SiIntellijidea } from "react-icons/si";
 import { SiSpringboot } from "react-icons/si";
+import { FaSymfony } from "react-icons/fa";
 
 const skills = [
 
@@ -24,6 +25,7 @@ const skills = [
     {name: "React",  category: "frontend",logo:FaReact, level_text: "Débutant Avancé"},
     {name: "Next.js",  category: "frontend",logo:SiNextdotjs, level_text: "Débutant Avancé"},
     {name: "Tailwind CSS",  category: "frontend",logo:RiTailwindCssFill, level_text: "Débutant Anvancé"},
+    
 
     // Backend
     {name: "Java", level: 85, category: "backend",logo:FaJava, level_text: "Compétent"},
@@ -31,13 +33,14 @@ const skills = [
     {name: "Python", level: 95, category: "backend",logo:FaPython, level_text: "Efficace"},
     {name: "SQL", level: 75, category: "backend",logo:TbSql, level_text: "Compétent"},
     {name: "SpringBoot", level: 70, category: "backend",logo:SiSpringboot, level_text: "Débutant Avancé"},
+    {name: "Symfony",category: "backend" ,level_text:"Débutant",logo:FaSymfony },
 
     // Tools
     {name: "Git/GitHub", level: 95, category: "tools",logo:FaGithub, level_text: "Efficace"},
     {name: "Docker", level: 70, category: "tools",logo:FaDocker, level_text: "Compétent"},
     {name: "Figma", level: 70, category: "tools",logo:FaFigma, level_text: "Débutant Avancé"},
     {name: "VS Code", level: 85, category: "tools",logo:VscCode, level_text: "Efficace"},
-    {name: "IntelliJ", level: 80, category: "toolsd",logo:SiIntellijidea, level_text: "Comptétent"},
+    {name: "IntelliJ", level: 80, category: "tools",logo:SiIntellijidea, level_text: "Comptétent"},
 
 ]
 
