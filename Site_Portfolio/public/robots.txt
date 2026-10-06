@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://siteportfolio-dun.vercel.app/sitemap.xml
+Sitemap: https://www.studio-nvxl.fr/sitemap.xml
