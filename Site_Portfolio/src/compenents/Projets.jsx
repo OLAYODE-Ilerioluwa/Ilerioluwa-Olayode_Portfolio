@@ -68,7 +68,7 @@ const projets = [
         image:"/Projets/slimev1.png",
         tags: ["Java/JavaFx"],
         demoUrl:"#",
-        githubUrl:"https://github.com/OLAYODE-Ilerioluwa/Ilerioluwa-Olayode_Portfolio/tree/main/EXERCICE-SOW",
+        githubUrl:"https://github.com/OLAYODE-Ilerioluwa/2027SIO_IlerioluwaOLAYODE",
     },
     {
         id:8,
@@ -77,7 +77,7 @@ const projets = [
         image:"/Projets/NeuroLink.png",
         tags: ["PHP", "Symfony"," Java", "JavaFx"],
         demoUrl:"#",
-        githubUrl:"https://github.com/OLAYODE-Ilerioluwa/Ilerioluwa-Olayode_Portfolio/tree/main/EXERCICE-SOW",
+        githubUrl:"https://github.com/Bakaryndi94/2026-NEUROLINK-JAVA-GRP7",
     }
 ]
 

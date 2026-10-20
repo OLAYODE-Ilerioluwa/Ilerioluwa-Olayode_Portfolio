@@ -44,8 +44,8 @@ export const NavBar = () => {
             to="/#accueil"
             className="text-xl font-bold text-primary flex items-center relative z-50"
           >
-            <span className="text-glow text-foreground">Studio</span>{" "}
-            <span className="ml-1">NVXL</span>
+            <span className="text-glow text-foreground">Ilerioluwa</span>{" "}
+            <span className="ml-1">Olayode</span>
           </Link>
 
           {/* Desktop Nav */}
