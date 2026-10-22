@@ -1,4 +1,4 @@
-package com.corco.corcorback.entite;
+package com.corco.corcoback.entity;
 
 import jakarta.persistence.*;
 
