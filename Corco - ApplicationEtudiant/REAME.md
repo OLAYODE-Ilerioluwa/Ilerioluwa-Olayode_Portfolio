@@ -19,5 +19,5 @@ Suivez ces étapes pour lancer le projet en local sur votre machine :
 
 1. **Cloner le projet**
    ```bash
-   git clone <url-de-votre-repo>
+   git clone https://github.com/OLAYODE-Ilerioluwa/Ilerioluwa-Olayode_Portfolio/tree/main/Corco%20-%20ApplicationEtudiant
    cd corco-front
