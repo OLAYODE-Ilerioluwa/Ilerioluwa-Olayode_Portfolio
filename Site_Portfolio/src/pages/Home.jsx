@@ -8,6 +8,20 @@ import { Projets } from "../compenents/Projets.jsx";
 import { Contact } from "../compenents/Contact.jsx";
 import { Footer} from "../compenents/Footer.jsx"
 import { Parcours } from "../compenents/Parcours.jsx";
+import { Entreprise } from "../compenents/Entreprise.jsx";
+
+
+const useHash = () => {
+    const [hash, setHash] = useState(window.location.hash);
+
+    useEffect(() => {
+        const onChange = () => setHash(window.location.hash);
+        window.addEventListener("hashchange", onChange);
+        return () => window.removeEventListener("hashchange", onChange);
+    }, []);
+
+    return hash;
+};
 
 export const Home = () => {
   return (
@@ -21,6 +35,7 @@ export const Home = () => {
         <HeroSection/>
         <AboutMe/>
         <Parcours/>
+        <Entreprise/>
         <Skills/>
         <Projets/>
         <Contact/>
@@ -30,3 +45,11 @@ export const Home = () => {
     </div>
   );
 };
+
+function App() {
+    const hash = useHash();
+
+    if (hash === "#mentions-legales") return <MentionsLegales />;
+    if (hash === "#confidentialite") return <Confidentialite />;
+    return <Home />;
+}

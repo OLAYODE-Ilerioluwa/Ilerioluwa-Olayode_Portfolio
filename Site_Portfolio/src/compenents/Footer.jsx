@@ -21,6 +21,12 @@ export const Footer = () => {
             Mentions légales
         </Link>
     
+        <Link
+            to="/confidentialite"
+            className="text-sm text-foreground/60 hover:text-primary transition-colors duration-300"
+        >
+            Politique de confidentialité
+        </Link>
     </footer>
     );
 };
