@@ -30,43 +30,49 @@ const parcours = [
     
 ]
 
-export const Parcours = () =>{
+export const Parcours = () => {
     return (
-        <section id="parcours" >
+        <section id="parcours" className="py-24">
             <div className="container">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
                     Mon <span className="text-primary">Parcours</span>
                 </h2>
-                <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto"> Vous suivrez mon parcours jusqu'à maintenant</p>
+                <p className="text-center text-muted-foreground mb-14 max-w-2xl mx-auto">
+                    Vous suivrez mon parcours jusqu'à maintenant
+                </p>
 
-                <div className="flex flex-col items-start gap-5 " >
-                    {parcours.map((parcour) => (
-                        <div key={parcour.id}  className="relative z-10 p-6 rounded-lg shadow-xs w-full">
-                            <div className="text-left px-3 py-2">
-                                <span className="text-xl font-semibold flex items-center gap-x-5 text-primary"><IoIosArrowDroprightCircle size={20} />{parcour.title}</span>
+                <div className="relative max-w-3xl mx-auto">
+                    <div className="absolute left-[18px] top-4 bottom-4 w-px bg-border" />
+
+                    <div className="flex flex-col gap-8">
+                        {parcours.map((parcour) => (
+                            <div key={parcour.id} className="relative pl-14">
+                                <span className="absolute left-0 top-5 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground ring-4 ring-background">
+                                    <IoIosArrowDroprightCircle size={20} />
+                                </span>
+
+                                <div className="gradient-border  p-6 text-left shadow-xs">
+                                    <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+                                        <h3 className="text-xl font-semibold">{parcour.title}</h3>
+                                        <span className="w-fit shrink-0 rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
+                                            {parcour.period}
+                                        </span>
+                                    </div>
+
+                                    <div className="mt-2 flex items-center gap-x-2 text-sm text-muted-foreground">
+                                        <MdOutlineLocationOn size={18} className="text-primary" />
+                                        {parcour.lieu}
+                                    </div>
+
+                                    <p className="mt-4 text-muted-foreground leading-relaxed">
+                                        {parcour.description}
+                                    </p>
+                                </div>
                             </div>
-                            <div className="text-left px-4 underline italic text-foreground py-1">
-                                {parcour.period}
-                            </div>
-                            <div className="text-left px-4 flex items-center gap-x-5 py-1 ">
-                                <MdOutlineLocationOn size={20}/>{parcour.lieu}
-                            </div>
-                            <div className="text-left px-4 py-2 ">
-                                {parcour.description}
-                            </div>
-
-
-
-                        </div>
-                    ))}
-
+                        ))}
+                    </div>
                 </div>
             </div>
-            
-            
-
         </section>
-
     );
-
 };
